@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Sanket Kumar | Mechanical Portfolio</title>
+    <title>Sanket Kumar | Aerospace & Mechanical Engineer</title>
 </head>
 <body>
 
     <nav>
-        <div style="font-weight: 900; letter-spacing: 3px;">SANKET KUMAR</div>
+        <a href="index.html" class="logo">SANKET KUMAR</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="projects.html">Projects</a>
@@ -16,26 +17,36 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>MECHANICAL <br> ENGINEER.</h1>
-            <p>Recent graduate focused on high-precision CAD design, simulation testing, and data intelligence.</p>
-            <div style="display: flex; gap: 20px;">
-                <a href="https://linkedin.com" class="btn-outline">LinkedIn</a>
-                <a href="assets/resume.pdf" class="btn-outline">Resume</a>
-            </div>
-        </div>
-        <div class="hero-image-wrapper">
-            <div class="hero-image-3d" id="tilt"></div>
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; margin-bottom: 15px;">Mechanical Engineer</p>
+        <h1>I'm Sanket Kumar. I design hardware and analyze systems to push the limits of innovation.</h1>
+        <p>Currently focused on bridging the gap between Mechanical CAD design and Data Science. Recent graduate with expertise in SolidWorks, Ansys, and ML.</p>
+        
+        <div class="social-links">
+            <a href="https://linkedin.com" class="btn-davis">LinkedIn</a>
+            <a href="projects.html" class="btn-davis">Projects</a>
+            <a href="assets/resume.pdf" class="btn-davis">Resume</a>
         </div>
     </section>
 
-    <script>
-        const tilt = document.getElementById('tilt');
-        window.addEventListener('mousemove', (e) => {
-            let x = (window.innerWidth / 2 - e.pageX) / 40;
-            let y = (window.innerHeight / 2 - e.pageY) / 40;
-            tilt.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
-        });
-    </script>
+    <div class="project-strip">
+        <img src="assets/images/cad-bg.jpg" alt="CAD Engine">
+        <div class="project-content">
+            <h2>V6 Radial Engine</h2>
+            <a href="project/cad-engine.html" class="learn-more">Learn More</a>
+        </div>
+    </div>
+
+    <div class="project-strip">
+        <img src="assets/images/sim-bg.jpg" alt="Simulation">
+        <div class="project-content">
+            <h2>Ansys Simulation Analysis</h2>
+            <a href="project/simulation-truss.html" class="learn-more">Learn More</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Sanket Kumar. Built for Engineering Excellence.</p>
+    </footer>
+
 </body>
 </html>
