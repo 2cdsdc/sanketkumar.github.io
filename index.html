@@ -3,265 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Kumar | Mechanical Engineering Portfolio</title>
+    <title>Sanket Kumar | Mechanical Engineer</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- 1. GLOBAL SETTINGS & BLUEPRINT BACKGROUND --- */
         :root {
-            --ui-blue: #00d4ff;
-            --bg-dark: #050a10;
-            --panel-border: rgba(0, 212, 255, 0.2);
-            --text-gray: #94a3b8;
+            --paper-white: #ffffff;
+            --ink-black: #1a1a1a;
+            --blueprint-blue: #004a99; /* Professional technical blue */
+            --border-gray: #d1d5db;
+            --light-gray: #f9fafb;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-dark);
-            /* Blueprint Grid Effect */
-            background-image: 
-                linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-            color: #e2e8f0;
-            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--paper-white);
+            color: var(--ink-black);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
             display: flex;
+        }
+
+        /* --- SIDE NAVIGATION --- */
+        nav {
+            width: 250px;
             height: 100vh;
-            overflow: hidden;
+            border-right: 1px solid var(--border-gray);
+            padding: 40px 25px;
+            position: fixed;
+            background: var(--light-gray);
         }
 
-        /* --- 2. SIDEBAR (CAD FEATURE TREE STYLE) --- */
-        #sidebar {
-            width: 280px;
-            background: rgba(10, 20, 30, 0.9);
-            border-right: 1px solid var(--panel-border);
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            z-index: 100;
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 50px;
+            display: block;
+            color: var(--blueprint-blue);
         }
 
-        .tree-header {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
-            color: var(--ui-blue);
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--ui-blue);
-            padding-bottom: 5px;
-            margin-top: 20px;
-        }
-
-        .tree-item {
-            padding: 8px 10px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-gray);
+        nav ul { list-style: none; }
+        nav ul li { margin-bottom: 20px; }
+        nav ul li a {
             text-decoration: none;
+            color: var(--ink-black);
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: 0.2s;
         }
 
-        .tree-item:hover {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--ui-blue);
-        }
+        nav ul li a:hover { color: var(--blueprint-blue); padding-left: 5px; }
 
-        /* --- 3. MAIN CONTENT AREA --- */
+        /* --- MAIN CONTENT --- */
         main {
-            flex: 1;
-            padding: 60px;
-            overflow-y: auto;
-            position: relative;
+            margin-left: 250px;
+            padding: 80px 10%;
+            width: 100%;
         }
 
-        .hero-section {
-            margin-bottom: 100px;
-            border-left: 4px solid var(--ui-blue);
-            padding-left: 30px;
+        .header-section {
+            border-bottom: 2px solid var(--ink-black);
+            padding-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            letter-spacing: 4px;
-            color: white;
-        }
-
-        .sub-headline {
-            color: var(--ui-blue);
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        /* --- 4. PROJECT CARDS (TECHNICAL LAYOUT) --- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--panel-border);
-            padding: 20px;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            border-color: var(--ui-blue);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
-        }
-
-        .viz-window {
-            width: 100%;
-            height: 200px;
-            background: #000;
-            margin-bottom: 20px;
-            border: 1px solid #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Scanline animation */
-        .viz-window::after {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 2px;
-            background: var(--ui-blue);
-            box-shadow: 0 0 10px var(--ui-blue);
-            animation: scan 4s infinite linear;
-            opacity: 0.3;
-        }
-
-        @keyframes scan {
-            0% { top: 0; }
-            100% { top: 100%; }
-        }
-
-        .project-title {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--ui-blue);
+            font-size: 3rem;
+            font-weight: 600;
             margin-bottom: 10px;
+            letter-spacing: -1px;
         }
 
-        /* --- 5. DRAFTING TITLE BLOCK --- */
-        .title-block {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            border: 2px solid var(--ui-blue);
-            background: var(--bg-dark);
-            display: grid;
-            grid-template-columns: 120px 120px;
-            font-size: 10px;
-            z-index: 1000;
-        }
-
-        .title-block div {
-            border: 0.5px solid var(--panel-border);
-            padding: 5px;
+        .subtitle {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1rem;
+            color: var(--blueprint-blue);
             text-transform: uppercase;
         }
 
-        .label { color: var(--ui-blue); margin-right: 5px; }
-
-        /* --- 6. COORDINATE AXES WIDGET --- */
-        #axes {
-            position: fixed;
-            bottom: 40px;
-            left: 320px;
-            width: 60px;
-            height: 60px;
-            opacity: 0.5;
+        /* --- PROJECT GRID --- */
+        .section-label {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 30px;
+            display: block;
         }
+
+        .project-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #eee;
+            border: 1px solid var(--border-gray);
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Makes renders look like technical drawings */
+            filter: grayscale(1) contrast(1.1);
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .project-meta {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            background: #f0f4f8;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* --- TECHNICAL TITLE BLOCK --- */
+        .iso-footer {
+            margin-top: 100px;
+            border: 1px solid var(--ink-black);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+        }
+
+        .iso-footer div {
+            padding: 15px;
+            border-right: 1px solid var(--ink-black);
+        }
+
+        .iso-footer div:last-child { border-right: none; }
+        .iso-footer b { display: block; color: var(--blueprint-blue); }
 
     </style>
 </head>
 <body>
 
-    <aside id="sidebar">
-        <div style="font-size: 1.2rem; font-weight: bold; color: white; margin-bottom: 10px;">
-            <i class="fas fa-cog"></i> SANKET_K
-        </div>
-        
-        <div class="tree-header">ROOT_DIRECTORY</div>
-        <a href="#" class="tree-item"><i class="fas fa-user"></i> About_Me.info</a>
-        <a href="#" class="tree-item"><i class="fas fa-file-pdf"></i> Resume_Rev_03.pdf</a>
-        
-        <div class="tree-header">CAD_ASSEMBLIES</div>
-        <a href="#" class="tree-item"><i class="fas fa-cube"></i> V6_Engine.sldasm</a>
-        <a href="#" class="tree-item"><i class="fas fa-cube"></i> Gearbox_Unit.sldasm</a>
-        
-        <div class="tree-header">SIMULATIONS</div>
-        <a href="#" class="tree-item"><i class="fas fa-chart-line"></i> Thermal_Load.ansys</a>
-        <a href="#" class="tree-item"><i class="fas fa-wind"></i> Airfoil_CFD.fluent</a>
-    </aside>
+    <nav>
+        <span class="nav-logo">SANKET KUMAR</span>
+        <ul>
+            <li><a href="#work">PROJECTS</a></li>
+            <li><a href="#about">ABOUT ME</a></li>
+            <li><a href="#skills">CAPABILITIES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
 
     <main>
-        <section class="hero-section">
-            <p class="sub-headline">// MECHANICAL DESIGN ENGINEER</p>
-            <h1>SANKET KUMAR</h1>
-            <p style="max-width: 600px; line-height: 1.8; color: var(--text-gray);">
-                Specializing in high-precision CAD modeling and Finite Element Analysis (FEA). 
-                Transforming theoretical concepts into manufacturable engineering solutions.
+        <section class="header-section">
+            <span class="subtitle">Mechanical Design & Simulation</span>
+            <h1>Engineering Portfolio</h1>
+            <p style="max-width: 600px; color: #555;">
+                Providing data-driven design solutions using CAD and FEA. Focused on structural integrity, manufacturability, and thermal optimization.
             </p>
         </section>
 
-        <h2 style="font-family: 'Orbitron'; font-size: 1.2rem; border-bottom: 1px solid var(--panel-border); padding-bottom: 10px;">
-            PROJECT_VIEWPORT
-        </h2>
-
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="viz-window">
-                    <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=500" alt="CAD" style="width:100%; height:100%; object-fit:cover; opacity: 0.5;">
-                    <span style="position:absolute; top:10px; left:10px; font-size:10px; color:var(--ui-blue);">MODE: WIREFRAME</span>
+        <span class="section-label">SELECTED WORK // 2024-2025</span>
+        
+        <div id="work">
+            <div class="project-row">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=800" alt="CAD Render">
                 </div>
-                <h3 class="project-title">Internal Combustion Unit</h3>
-                <p style="font-size: 0.85rem; color: var(--text-gray);">Full assembly design with dynamic timing analysis and tolerance stack-up.</p>
+                <div class="project-info">
+                    <span class="project-meta">SOLIDWORKS // STATIC ANALYSIS</span>
+                    <h3>High-Pressure Valve Assembly</h3>
+                    <p>Redesigned a hydraulic valve assembly to reduce material weight by 15% while maintaining a Factor of Safety (FOS) of 2.5.</p>
+                </div>
             </div>
 
-            <div class="project-card">
-                <div class="viz-window">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=500" alt="Ansys" style="width:100%; height:100%; object-fit:cover; opacity: 0.5; filter: hue-rotate(150deg);">
-                    <span style="position:absolute; top:10px; left:10px; font-size:10px; color:var(--ui-blue);">MODE: FEA_ANALYSIS</span>
+            <div class="project-row">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" alt="Simulation Result">
                 </div>
-                <h3 class="project-title">Structural Bridge Truss</h3>
-                <p style="font-size: 0.85rem; color: var(--text-gray);">Static structural analysis in ANSYS to determine deformation under 500kN load.</p>
+                <div class="project-info">
+                    <span class="project-meta">ANSYS // THERMAL ANALYSIS</span>
+                    <h3>Heat Sink Optimization</h3>
+                    <p>Performed steady-state thermal analysis on an electronic cooling fin array to improve heat dissipation efficiency by 12%.</p>
+                </div>
             </div>
         </div>
+
+        <div class="iso-footer">
+            <div><b>ENGINEER:</b> SANKET KUMAR</div>
+            <div><b>DOC NO:</b> PORTFOLIO-01</div>
+            <div><b>UNITS:</b> METRIC (mm)</div>
+            <div><b>REVISION:</b> v1.02</div>
+        </div>
     </main>
-
-    <div class="title-block">
-        <div style="grid-column: span 2;"><span class="label">Project:</span> Portfolio_Site_2025</div>
-        <div><span class="label">Drawn:</span> S. KUMAR</div>
-        <div><span class="label">Scale:</span> 1:1</div>
-        <div><span class="label">Unit:</span> Metric</div>
-        <div><span class="label">Sheet:</span> 01/01</div>
-    </div>
-
-    <div id="axes">
-        <svg viewBox="0 0 100 100">
-            <line x1="50" y1="50" x2="90" y2="50" stroke="red" stroke-width="2"/>
-            <text x="92" y="55" fill="red" font-size="12">X</text>
-            <line x1="50" y1="50" x2="50" y2="10" stroke="#00ff00" stroke-width="2"/>
-            <text x="45" y="8" fill="#00ff00" font-size="12">Y</text>
-            <line x1="50" y1="50" x2="30" y2="70" stroke="#00d4ff" stroke-width="2"/>
-            <text x="20" y="75" fill="#00d4ff" font-size="12">Z</text>
-        </svg>
-    </div>
 
 </body>
 </html>
