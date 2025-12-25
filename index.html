@@ -1,17 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mechanical Engineering Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechanical Engineering Portfolio</title>
+
+<style>
+/* ===== COMPLETE STYLES INSIDE HTML ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --primary: #2563eb;
+  --dark: #0f172a;
+  --gray: #475569;
+
+  --bg-white: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-gray: #f1f5f9;
+  --bg-blue: #eef2ff;
+
+  --border: #e5e7eb;
+}
+
+body {
+  background: var(--bg-white);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+/* NAVBAR */
+.navbar {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 18px 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+/* HERO */
+.hero {
+  padding: 100px 10%;
+  text-align: center;
+  background: var(--bg-white);
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.tagline {
+  margin-top: 10px;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-top: 15px;
+  color: var(--gray);
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 5px;
+  display: inline-block;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 10%;
+  border-top: 1px solid var(--border);
+}
+
+#projects { background: var(--bg-white); }
+#about { background: var(--bg-gray); }
+#services { background: var(--bg-blue); }
+#contact { background: var(--bg-gray); }
+.light { background: var(--bg-light); }
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* PROJECTS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+/* SERVICES */
+.services {
+  list-style: none;
+  text-align: center;
+}
+
+.services li {
+  margin: 10px 0;
+  color: var(--gray);
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 28px; }
+}
+</style>
+
 </head>
 <body>
 
 <header class="navbar">
-  <div class="logo">Your Name</div>
+  <strong>Your Name</strong>
   <nav>
-    <a href="#home">Home</a>
     <a href="#projects">Projects</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
@@ -19,102 +155,53 @@
   </nav>
 </header>
 
-<section id="home" class="hero">
+<section class="hero">
   <h1>Mechanical Engineering Student</h1>
   <p class="tagline">CAD • CAE • Engineering Computation</p>
   <p class="subtitle">
     Designing and analyzing mechanical systems using SolidWorks, ANSYS,
-    MATLAB, and Python with a focus on simulation-driven engineering.
+    MATLAB, and Python.
   </p>
-
   <div class="buttons">
-    <a href="#projects" class="btn">View Projects</a>
-    <a href="#contact" class="btn secondary">Contact Me</a>
+    <a class="btn" href="#projects">View Projects</a>
   </div>
 </section>
 
 <section id="projects" class="section">
   <h2>Projects</h2>
   <div class="grid">
-
-    <div class="card">
-      <h3>Structural Analysis of Mechanical Component</h3>
-      <p>
-        Performed finite element analysis to evaluate stress, deformation,
-        and safety factors under applied loads.
-      </p>
-      <span>ANSYS • SolidWorks</span>
-    </div>
-
-    <div class="card">
-      <h3>Parametric CAD Design</h3>
-      <p>
-        Designed parametric parts and assemblies with clear design intent
-        and manufacturing considerations.
-      </p>
-      <span>SolidWorks</span>
-    </div>
-
-    <div class="card">
-      <h3>Thermal Modeling & Simulation</h3>
-      <p>
-        Developed numerical models to simulate heat transfer behavior
-        and validate analytical solutions.
-      </p>
-      <span>MATLAB</span>
-    </div>
-
-    <div class="card">
-      <h3>Engineering Data Analysis</h3>
-      <p>
-        Processed and analyzed engineering datasets to extract insights
-        and visualize results.
-      </p>
-      <span>Python</span>
-    </div>
-
+    <div class="card">Structural Analysis using ANSYS</div>
+    <div class="card">Parametric CAD Design in SolidWorks</div>
+    <div class="card">Thermal Simulation in MATLAB</div>
+    <div class="card">Engineering Data Analysis with Python</div>
   </div>
 </section>
 
-<section id="about" class="section light">
+<section id="about" class="section">
   <h2>About Me</h2>
-  <p>
-    I am a Mechanical Engineering student with hands-on experience in CAD design,
-    CAE simulation, and engineering computation. I enjoy solving engineering
-    problems using simulation, numerical methods, and data-driven approaches.
+  <p style="text-align:center;">
+    Mechanical Engineering student focused on simulation-driven
+    and data-based engineering solutions.
   </p>
 </section>
 
 <section id="services" class="section">
   <h2>Services</h2>
   <ul class="services">
-    <li>CAD Modeling & Mechanical Design</li>
-    <li>Structural & Thermal Simulation (ANSYS)</li>
-    <li>MATLAB Engineering Modeling</li>
-    <li>Python Automation & Data Analysis</li>
+    <li>CAD Modeling</li>
+    <li>FEA & Simulation</li>
+    <li>MATLAB Modeling</li>
+    <li>Python Data Analysis</li>
   </ul>
-</section>
-
-<section class="section light">
-  <h2>Testimonials</h2>
-  <blockquote>
-    “Strong analytical skills and a solid understanding of simulation-driven
-    mechanical engineering.”
-    <span>— Project Supervisor</span>
-  </blockquote>
 </section>
 
 <section id="contact" class="section">
   <h2>Contact</h2>
-  <p>Email: your.email@example.com</p>
-  <p>
-    <a href="#">LinkedIn</a> •
-    <a href="#">GitHub</a>
-  </p>
+  <p style="text-align:center;">your.email@example.com</p>
 </section>
 
 <footer>
-  <p>© 2025 Your Name</p>
+  © 2025 Your Name
 </footer>
 
 </body>
