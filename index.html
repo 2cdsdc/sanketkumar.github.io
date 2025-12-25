@@ -1,21 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>TEST</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechanical Engineering Portfolio</title>
+
 <style>
+/* =======================
+   COMPLETE FINAL STYLES
+   ======================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* COLORS */
+:root {
+  --primary: #2563eb;
+  --dark: #0f172a;
+  --gray: #475569;
+
+  --bg-white: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-gray: #f1f5f9;
+  --bg-blue: #eef2ff;
+
+  --border: #e5e7eb;
+}
+
 body {
-  background: yellow !important;
-  font-size: 40px;
+  background: var(--bg-white);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+/* NAVBAR */
+header {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header strong {
+  font-size: 18px;
+}
+
+header a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--gray);
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  padding: 110px 10%;
   text-align: center;
-  padding-top: 100px;
+  background: var(--bg-white);
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero .tagline {
+  margin-top: 12px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.hero .subtitle {
+  margin-top: 18px;
+  color: var(--gray);
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 10%;
+}
+
+/* DIFFERENT BACKGROUNDS */
+#projects {
+  background: var(--bg-gray);
+}
+
+#about {
+  background: var(--bg-light);
+}
+
+#services {
+  background: var(--bg-blue);
+}
+
+#contact {
+  background: var(--bg-gray);
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.project {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.project h3 {
+  margin-bottom: 10px;
+}
+
+.project p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* SERVICES */
+.services {
+  list-style: none;
+  text-align: center;
+}
+
+.services li {
+  margin: 12px 0;
+  color: var(--gray);
+}
+
+/* CONTACT */
+#contact p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
 }
 </style>
+
 </head>
 <body>
 
-THIS IS A TEST  
-<br><br>
-IF YOU SEE YELLOW, YOU ARE ON THE CORRECT SITE
+<header>
+  <strong>Your Name</strong>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-</body>
-</html>
+<section class="hero">
+  <h1>Mechanical Engineering Student</h1>
+  <p class="tagline">CAD • CAE • Engineering Computation</p>
+  <p class="subtitle">
+    Designing and analyzing mechanical systems using SolidWorks, ANSYS,
+    MATLAB, and Python with a strong industry focus.
+  </p>
+  <a href="#projects" class="btn">View Projects</a>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project">
+      <h3>Structural Analysis (ANSYS)</h3>
+      <p>Finite element analysis to evaluate stress and deformation.</p>
+    </div>
+    <div class="project">
+      <h3>Parametric CAD Design</h3>
+      <p>Designed mechanical components and assemblies in SolidWorks.</p>
+    </div>
+    <div class="project">
+      <h3>Ther
+
