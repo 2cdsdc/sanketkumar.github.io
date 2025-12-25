@@ -24,40 +24,90 @@ a {
   text-decoration: none;
 }
 
+/* ================= NAVIGATION ================= */
+
 nav {
-  padding: 20px 8%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(11,18,32,0.95);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+
+  padding: 28px 10%;
+
+  background: rgba(10, 15, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Logo / Portfolio name */
+nav strong {
+  font-size: 1.7rem;            /* ⬆ BIGGER */
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--text);
+}
+
+/* Navigation links container */
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation links */
 nav a {
-  margin-left: 18px;
+  font-size: 1.05rem;           /* ⬆ BIGGER */
+  margin-left: 30px;
   font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.section {
-  padding: 90px 10%;
+/* Hover underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
-h1, h2, h3 {
-  color: #ffffff;
+nav a:hover::after {
+  width: 100%;
 }
 
-p {
-  color: var(--muted);
+/* Active page */
+nav a.active {
+  color: var(--accent);
+  font-weight: 600;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+nav a.active::after {
+  width: 100%;
 }
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  nav {
+    padding: 20px 7%;
+  }
+
+  nav strong {
+    font-size: 1.35rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+    margin-left: 18px;
+  }
+}
+
 
 /* PROJECT CARD */
 .project-card {
