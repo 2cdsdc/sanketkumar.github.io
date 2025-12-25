@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanket Kumar | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --bg: #fdfdfd; --text: #1e293b; --primary: #4f46e5; --soft-blue: #e0e7ff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        nav { display: flex; justify-content: space-between; padding: 25px 8%; align-items: center; background: white; border-bottom: 1px solid #f1f5f9; position: sticky; top: 0; z-index: 100; }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 30px; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
 
-<title>Sanket Kumar | Mechanical Engineering Portfolio</title>
+        .hero { display: flex; align-items: center; justify-content: space-between; padding: 100px 10%; min-height: 80vh; }
+        .hero-text { flex: 1; animation: fadeInUp 1s ease; }
+        .hero-text h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; }
+        .hero-text p { font-size: 1.2rem; color: #64748b; margin-bottom: 30px; }
 
-<meta name="description" content="Sanket Kumar – Mechanical Engineering student portfolio showcasing CAD, CAE, ANSYS, SolidWorks, simulation, and machine learning projects.">
-<meta name="keywords" content="Mechanical Engineering Student, CAD Portfolio, SolidWorks, ANSYS, CAE Simulation, Machine Learning Engineering">
-<meta name="author" content="Sanket Kumar">
+        .hero-img { flex: 0.8; display: flex; justify-content: center; animation: float 6s ease-in-out infinite; }
+        .hero-img img { width: 350px; height: 450px; border-radius: 30px; object-fit: cover; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 10px solid white; }
 
-<link rel="stylesheet" href="assets/css/style.css">
+        .social-btns { display: flex; gap: 15px; margin-top: 20px; }
+        .btn { padding: 12px 25px; border-radius: 12px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 2px solid #e2e8f0; color: var(--text); }
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    </style>
 </head>
-
 <body>
+    <nav>
+        <div style="font-weight: 800; font-size: 1.4rem;">SANKET<span style="color:var(--primary)">.</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-<nav>
-  <strong>Sanket Kumar</strong>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-    <a href="assets/resume.pdf" target="_blank">Resume</a>
-    <button id="themeToggle">🌗</button>
-  </div>
-</nav>
-
-<section class="section reveal">
-  <div class="grid">
-    <div>
-      <h1>Mechanical Engineering Student</h1>
-      <p>
-        Focused on CAD design, CAE simulation, and machine learning–based
-        engineering analysis using SolidWorks, ANSYS, MATLAB, and Python.
-      </p>
-
-      <p>
-        📧 sanketku231@gmail.com<br>
-        📱 +91 7895356317
-      </p>
-
-      <p>
-        <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
-      </p>
-    </div>
-
-    <img src="assets/images/profile.jpg"
-         alt="Sanket Kumar Mechanical Engineering Student"
-         style="width:100%; border-radius:20px;">
-  </div>
-</section>
-
-<!-- Hidden SEO Text -->
-<section style="display:none;">
-Mechanical Engineering Student Portfolio with skills in CAD design, SolidWorks modeling,
-ANSYS simulation, CAE analysis, MATLAB computation, and machine learning for engineering applications.
-</section>
-
-<script src="assets/js/main.js"></script>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Mechanical Engineer <br>& Data Specialist</h1>
+            <p>I build high-precision systems and analyze complex data. Specialized in CAD, FEA simulations, and Machine Learning.</p>
+            <div class="social-btns">
+                <a href="resume.pdf" target="_blank" class="btn btn-primary">Download Resume</a>
+                <a href="https://linkedin.com" class="btn btn-outline"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" class="btn btn-outline"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="profile.jpg" alt="Sanket Kumar" onerror="this.src='https://via.placeholder.com/350x450?text=Your+Photo+Here'">
+        </div>
+    </section>
 </body>
 </html>
