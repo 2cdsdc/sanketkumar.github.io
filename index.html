@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Kumar | Mechanical Portfolio</title>
+    <title>Sanket Kumar | Multi-Disciplinary Engineer</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Outfit:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #050505;
-            --accent-color: #8b5cf6; /* Electric Violet */
-            --secondary-accent: #06b6d4; /* Neon Cyan */
-            --card-bg: #111111;
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
-            --syne: 'Syne', sans-serif;
-            --outfit: 'Outfit', sans-serif;
+            --bg: #050505;
+            --accent: #8b5cf6; /* Electric Violet */
+            --card: #111111;
+            --text: #ffffff;
+            --text-dim: #94a3b8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-color); color: var(--text-main); font-family: var(--outfit); overflow-x: hidden; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
 
         /* --- NAVIGATION --- */
         nav {
-            padding: 30px 8%;
+            padding: 25px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -35,7 +32,7 @@
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .logo { font-family: var(--syne); font-weight: 800; font-size: 1.5rem; color: var(--accent-color); }
+        .logo { font-family: 'Syne'; font-weight: 800; font-size: 1.4rem; color: var(--accent); }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -43,177 +40,187 @@
             display: flex;
             align-items: center;
             padding: 0 10%;
-            gap: 50px;
+            gap: 60px;
         }
         .hero-content { flex: 1.2; }
         .hero-content h1 { 
-            font-family: var(--syne); 
-            font-size: 5.5rem; 
-            font-weight: 800; 
+            font-family: 'Syne'; 
+            font-size: clamp(3rem, 7vw, 5rem); 
             line-height: 0.9; 
             margin-bottom: 25px;
-            background: linear-gradient(to right, #fff, var(--accent-color));
+            background: linear-gradient(to right, #fff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        /* SOCIAL LINKS BAR */
-        .social-bar {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .social-icon:hover {
-            background: var(--accent-color);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
-        }
-
-        .resume-btn {
-            padding: 12px 25px;
-            background: transparent;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-family: var(--syne);
-            transition: 0.3s;
-        }
-        .resume-btn:hover { background: var(--accent-color); color: white; }
-
-        .hero-image {
-            flex: 0.8;
-            position: relative;
-        }
-        .img-mask {
-            width: 400px;
-            height: 500px;
-            background: var(--card-bg);
-            border-radius: 40px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-
-        /* --- PROJECT GRID --- */
-        .work { padding: 100px 10%; }
-        .section-header { font-family: var(--syne); font-size: 3rem; font-weight: 800; margin-bottom: 60px; }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 30px;
-            padding: 40px;
-            margin-bottom: 30px;
-            display: flex;
-            gap: 40px;
-            border: 1px solid rgba(255,255,255,0.03);
-            transition: 0.4s;
-        }
-        .project-card:hover { border-color: var(--accent-color); transform: scale(1.01); }
-        .p-info { flex: 1; }
-        .p-tag { font-family: 'JetBrains Mono'; color: var(--secondary-accent); font-size: 0.8rem; margin-bottom: 15px; display: block; }
-        .p-title { font-family: var(--syne); font-size: 2.2rem; margin-bottom: 20px; }
-        .p-desc { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; }
         
-        .p-image { 
-            flex: 1; 
-            background: #1a1a1a; 
-            border-radius: 20px; 
-            height: 350px; 
-            overflow: hidden; 
+        .hero-content p { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 35px; max-width: 550px; line-height: 1.6; }
+
+        .btn-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+        .social-links { display: flex; gap: 12px; }
+        .icon-btn {
+            width: 48px; height: 48px; border-radius: 12px;
+            background: var(--card); border: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; transition: 0.3s;
         }
+        .icon-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-5px); }
+        
+        .resume-link {
+            display: inline-block; padding: 14px 28px;
+            background: var(--accent); color: white;
+            text-decoration: none; border-radius: 12px;
+            font-weight: 700; font-family: 'Syne'; transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+        }
+        .resume-link:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4); }
 
-        /* --- SKILLS PILLS --- */
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 50px; }
-        .skill-pill { padding: 8px 18px; background: rgba(255,255,255,0.05); border-radius: 50px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1); }
+        /* --- PHOTO ANIMATION --- */
+        .hero-img { flex: 0.8; display: flex; justify-content: center; }
+        .profile-card {
+            width: 100%; max-width: 380px; aspect-ratio: 1/1.2;
+            background: var(--card); border-radius: 40px;
+            overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-25px) rotate(2deg); } }
 
+        .profile-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .profile-card:hover img { transform: scale(1.05); filter: brightness(1.1); }
+
+        /* --- PROJECT FILTER BAR --- */
+        .filter-section { padding: 80px 10% 20px; text-align: left; }
+        .filter-section h2 { font-family: 'Syne'; font-size: 2.5rem; margin-bottom: 30px; }
+        
+        .filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+        .tab {
+            background: transparent; border: 1px solid #222;
+            color: var(--text-dim); padding: 10px 22px;
+            border-radius: 50px; cursor: pointer;
+            font-family: 'JetBrains Mono'; font-size: 0.8rem; transition: 0.3s;
+        }
+        .tab.active, .tab:hover { border-color: var(--accent); color: var(--accent); background: rgba(139, 92, 246, 0.05); }
+
+        /* --- PROJECTS GRID --- */
+        .projects-grid {
+            padding: 0 10% 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        .project-card {
+            background: var(--card); border-radius: 28px;
+            padding: 30px; border: 1px solid rgba(255,255,255,0.03);
+            transition: 0.4s; position: relative;
+        }
+        .project-card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        
+        .domain { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--accent); margin-bottom: 12px; display: block; }
+        .project-card h3 { font-family: 'Syne'; font-size: 1.6rem; margin-bottom: 15px; }
+        .project-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
+
+        /* --- FOOTER --- */
+        footer { padding: 60px; text-align: center; border-top: 1px solid #111; color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; height: auto; padding-top: 140px; }
+            .hero-content h1 { font-size: 3.5rem; }
+            .btn-group { justify-content: center; }
+            .profile-card { max-width: 300px; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">SANKET.K</div>
-        <div class="skills-container" style="margin-top:0;">
-            <div class="skill-pill">MECHANICAL ENG</div>
-            <div class="skill-pill">CAD EXPERT</div>
-        </div>
+        <div style="font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--text-dim);">[ MECH_ENG // DATA_SCIENCE ]</div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Engineering<br>With Soul.</h1>
-            <p style="color: var(--text-muted); font-size: 1.2rem; margin-bottom: 30px;">
-                I bridge the gap between abstract physics and real-world machinery. 
-                Expert in SolidWorks modeling and high-stress Ansys simulations.
+            <h1>Engineering<br>The Future.</h1>
+            <p>
+                Mechanical Engineering student bridging the gap between hardware design and data intelligence. 
+                Expert in <b>SolidWorks</b>, <b>Ansys</b>, and <b>Machine Learning</b>.
             </p>
 
-            <div class="social-bar">
-                <a href="https://linkedin.com/in/YOUR_USERNAME" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/YOUR_USERNAME" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="YOUR_RESUME_LINK.pdf" class="resume-btn" target="_blank">DOWNLOAD RESUME <i class="fas fa-arrow-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+            <div class="btn-group">
+                <a href="YOUR_RESUME_LINK.pdf" class="resume-link">DOWNLOAD CV</a>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/YOUR_USERNAME" class="icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/YOUR_USERNAME" class="icon-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </div>
 
-        <div class="hero-image">
-            <div class="img-mask">
-                <img src="https://via.placeholder.com/400x500" alt="Sanket Kumar" style="width:100%; height:100%; object-fit:cover;">
+        <div class="hero-img">
+            <div class="profile-card">
+                <img src="profile.jpg" alt="Sanket Kumar" onerror="this.src='https://via.placeholder.com/400x500/111111/8b5cf6?text=Sanket+Kumar'">
             </div>
         </div>
     </section>
 
-    <section class="work" id="work">
-        <h2 class="section-header">Case Studies</h2>
+    <div class="filter-section" id="work">
+        <h2>Portfolio</h2>
+        <div class="filter-tabs">
+            <button class="tab active" onclick="filterProjects('all')">ALL WORKS</button>
+            <button class="tab" onclick="filterProjects('mech')">MECHANICAL</button>
+            <button class="tab" onclick="filterProjects('data')">DATA SCIENCE</button>
+            <button class="tab" onclick="filterProjects('matlab')">MATLAB</button>
+        </div>
+    </div>
 
-        <div class="project-card">
-            <div class="p-info">
-                <span class="p-tag">// 01 DESIGN & MOTION</span>
-                <h3 class="p-title">V6 Radial Engine Assembly</h3>
-                <p class="p-desc">A deep-dive into complex assembly design. Modeled 150+ individual components including dynamic piston timing and lubrication paths.</p>
-                <div class="skills-container">
-                    <div class="skill-pill">SOLIDWORKS</div>
-                    <div class="skill-pill">TOLERANCE ANALYSIS</div>
-                </div>
-            </div>
-            <div class="p-image">
-                <img src="https://via.placeholder.com/600x400" alt="Project" style="width:100%; height:100%; object-fit:cover;">
-            </div>
+    <section class="projects-grid">
+        <div class="project-card" data-cat="mech">
+            <span class="domain">// MECHANICAL DESIGN</span>
+            <h3>V6 Engine Assembly</h3>
+            <p>Designed a complete internal combustion engine with 150+ parts. Performed motion study and clearance checks.</p>
         </div>
 
-        <div class="project-card">
-            <div class="p-info">
-                <span class="p-tag">// 02 SIMULATION & ANALYSIS</span>
-                <h3 class="p-title">Structural Bridge Frame</h3>
-                <p class="p-desc">Applied Finite Element Analysis (FEA) to validate structural integrity under a 10-ton load, optimizing weight by 20%.</p>
-                <div class="skills-container">
-                    <div class="skill-pill">ANSYS MECHANICAL</div>
-                    <div class="skill-pill">FEA</div>
-                    <div class="skill-pill">OPTIMIZATION</div>
-                </div>
-            </div>
-            <div class="p-image">
-                <img src="https://via.placeholder.com/600x400" alt="Project" style="width:100%; height:100%; object-fit:cover;">
-            </div>
+        <div class="project-card" data-cat="mech">
+            <span class="domain">// SIMULATION</span>
+            <h3>Bridge Frame Stress Analysis</h3>
+            <p>Structural FEA in ANSYS to optimize weight-to-strength ratio under static load conditions.</p>
+        </div>
+
+        <div class="project-card" data-cat="data">
+            <span class="domain">// DATA SCIENCE</span>
+            <h3>Failure Prediction Model</h3>
+            <p>ML model using Python to predict machinery breakdown based on vibration and heat sensor data.</p>
+        </div>
+
+        <div class="project-card" data-cat="matlab">
+            <span class="domain">// COMPUTATIONAL</span>
+            <h3>PID Control System</h3>
+            <p>Developed a control logic in MATLAB/Simulink for automated drone stabilization.</p>
         </div>
     </section>
 
-    <footer style="padding: 60px 10%; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Designed for Performance // 2025</p>
+    <footer>
+        <p>© 2025 SANKET KUMAR | DESIGNED FOR PRECISION</p>
     </footer>
+
+    <script>
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const tabs = document.querySelectorAll('.tab');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
