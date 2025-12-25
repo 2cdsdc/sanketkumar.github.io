@@ -1,31 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Archive | Logbook</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>V6 Engine Assembly | Sanket Kumar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0b1220;
+  --card:#121a2f;
+  --accent:#4f9cf9;
+  --text:#e6eaf2;
+  --muted:#9aa4bf;
+}
+
+body{
+  font-family:Inter,sans-serif;
+  background:linear-gradient(180deg,#0b1220,#0f172a);
+  color:var(--text);
+  line-height:1.7;
+}
+
+a{color:var(--accent);text-decoration:none}
+
+nav{
+  padding:20px 8%;
+  background:rgba(11,18,32,.95);
+  backdrop-filter:blur(10px);
+}
+
+section{
+  padding:80px 10%;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:50px;
+  align-items:center;
+}
+
+.hero img{
+  width:100%;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.tag{
+  display:inline-block;
+  padding:6px 14px;
+  border:1px solid var(--accent);
+  border-radius:30px;
+  font-size:.75rem;
+  margin-bottom:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.05);
+}
+
+.card h3{
+  margin-bottom:12px;
+}
+
+.card p{
+  color:var(--muted);
+}
+
+.media{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.media img, .media video{
+  width:100%;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:var(--muted);
+  font-size:.85rem;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .media{grid-template-columns:1fr}
+}
+</style>
 </head>
+
 <body>
-    <div class="diary-container">
-        <nav><a href="index.html">Index</a> <a href="projects.html">Archive</a> <a href="contact.html">Connect</a></nav>
 
-        <h2 style="font-size: 2.5rem; margin-bottom: 50px; border-bottom: 2px solid var(--ink); display: inline-block;">Project Logbook</h2>
+<nav>
+  <a href="../projects.html">← Back to Projects</a>
+</nav>
 
-        <div class="entry">
-            <span class="date">ENTRY #01 // CAD_ASSEMBLY</span>
-            <h3>V6 Radial Engine Modeling</h3>
-            <p style="margin: 15px 0;">Modeling 150+ parts. Key focus on tolerance stack-up and thermal expansion analysis in SolidWorks.</p>
-            <img src="assets/images/cad-bg.jpg" style="width: 100%; border: 1px solid #ddd; margin-top: 10px;">
-            <br><br>
-            <a href="project/cad-engine.html" style="font-family:'JetBrains Mono'; font-size:0.8rem; color: var(--accent);">READ_FULL_PROCESS →</a>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <span class="tag">CAD DESIGN</span>
+    <h1>V6 Engine Assembly</h1>
 
-        <div class="entry">
-            <span class="date">ENTRY #02 // CAE_SIMULATION</span>
-            <h3>Truss Stress Analysis</h3>
-            <p style="margin: 15px 0;">FEA testing to identify failure points under variable loading conditions using Ansys Workbench.</p>
-            <a href="project/simulation-truss.html" style="font-family:'JetBrains Mono'; font-size:0.8rem; color: var(--accent);">READ_FULL_PROCESS →</a>
-        </div>
+    <p>
+      This project focuses on the complete CAD design and assembly of a
+      V6 internal combustion engine, emphasizing parametric modeling,
+      motion analysis, and assembly validation.
+    </p>
+  </div>
+
+  <img src="../assets/images/engine.jpg" alt="V6 Engine CAD Model">
+</section>
+
+<!-- PROJECT OVERVIEW -->
+<section>
+  <div class="grid">
+    <div class="card">
+      <h3>Project Objective</h3>
+      <p>
+        To design a fully functional V6 engine assembly with realistic
+        constraints, ensuring proper component interaction and motion.
+      </p>
     </div>
+
+    <div class="card">
+      <h3>Tools & Technologies</h3>
+      <p>
+        SolidWorks, Parametric Modeling, Assembly Constraints,
+        Motion Study
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>My Role</h3>
+      <p>
+        End-to-end design including part modeling, assembly,
+        interference checking, and motion validation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL DETAILS -->
+<section>
+  <h2>Engineering Approach</h2>
+  <br>
+  <p>
+    Each engine component was modeled parametrically to allow easy
+    design modifications. Proper mates and constraints were applied
+    to simulate real-world mechanical behavior. Motion studies were
+    conducted to analyze piston-crank interactions and clearance.
+  </p>
+</section>
+
+<!-- MEDIA -->
+<section>
+  <h2>Design Visuals</h2>
+  <br>
+
+  <div class="media">
+    <img src="../assets/images/engine.jpg" alt="Engine Assembly View">
+    <video controls>
+      <source src="../assets/videos/engine.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section>
+  <h2>Results & Learnings</h2>
+  <br>
+  <p>
+    The final assembly successfully demonstrated smooth mechanical
+    operation with no interferences. This project strengthened my
+    understanding of complex assemblies, mechanical constraints,
+    and real-world design considerations.
+  </p>
+</section>
+
+<footer>
+© 2025 Sanket Kumar | Mechanical Engineering Portfolio
+</footer>
+
 </body>
 </html>
