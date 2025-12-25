@@ -2,34 +2,40 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Archive | Sanket Kumar</title>
+    <title>Sanket Kumar | Mechanical Portfolio</title>
 </head>
 <body>
-    <div style="padding: 180px 8% 100px;">
-        <h2 style="font-family: 'Syne'; font-size: 4rem; margin-bottom: 80px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
-            PROJECTS<span style="opacity: 0.3;">_01-04</span>
-        </h2>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px;">
-            
-            <div class="project-card" onclick="location.href='project/cad-engine.html'">
-                <p class="mono" style="margin-bottom: 20px;">01 // SOLIDWORKS</p>
-                <h3 style="font-family: 'Syne'; font-size: 2.5rem; margin-bottom: 20px;">V6 RADIAL <br> ENGINE</h3>
-                <div style="overflow: hidden; height: 300px;">
-                    <img src="assets/images/cad-thumb.jpg" style="width: 100%; transition: 1s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                </div>
-                <p style="margin-top: 20px; font-weight: 300; opacity: 0.6;">A full assembly simulation with detailed motion analysis.</p>
-            </div>
-
-            <div class="project-card" style="margin-top: 100px;" onclick="location.href='project/ml-failure.html'">
-                <p class="mono" style="margin-bottom: 20px;">02 // PYTHON + ML</p>
-                <h3 style="font-family: 'Syne'; font-size: 2.5rem; margin-bottom: 20px;">PREDICTIVE <br> ANALYSIS</h3>
-                <div style="overflow: hidden; height: 300px; background: #111;">
-                    </div>
-                <p style="margin-top: 20px; font-weight: 300; opacity: 0.6;">Using sensor data to predict hardware failure rates.</p>
-            </div>
-
+    <nav>
+        <div style="font-weight: 900; letter-spacing: 3px;">SANKET KUMAR</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
         </div>
-    </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MECHANICAL <br> ENGINEER.</h1>
+            <p>Recent graduate focused on high-precision CAD design, simulation testing, and data intelligence.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="https://linkedin.com" class="btn-outline">LinkedIn</a>
+                <a href="assets/resume.pdf" class="btn-outline">Resume</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <div class="hero-image-3d" id="tilt"></div>
+        </div>
+    </section>
+
+    <script>
+        const tilt = document.getElementById('tilt');
+        window.addEventListener('mousemove', (e) => {
+            let x = (window.innerWidth / 2 - e.pageX) / 40;
+            let y = (window.innerHeight / 2 - e.pageY) / 40;
+            tilt.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+        });
+    </script>
 </body>
 </html>
