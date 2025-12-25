@@ -63,5 +63,145 @@
   opacity: 0;
   transform: translateX(50px);
   animation: slideIn 1s ease forwards;
-  a
+  animation-delay: 0.3s;
+}
 
+/* Image styling */
+.photo-frame img {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 35px 70px rgba(0,0,0,0.45);
+}
+
+/* Subtle float animation */
+.photo-frame {
+  animation:
+    slideIn 1s ease forwards,
+    floatImage 9s ease-in-out infinite;
+  animation-delay: 0.3s, 1.3s;
+}
+
+/* Animations */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero h1::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .photo-frame {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <strong>Sanket Kumar</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="assets/resume.pdf" target="_blank">Resume</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="section hero">
+
+  <div>
+    <h1>
+      Mechanical<br>
+      Engineering Student
+    </h1>
+
+    <p>
+      I design, analyze, and validate mechanical systems using
+      CAD and CAE principles. Experienced with SolidWorks,
+      ANSYS, MATLAB, and Python for simulation-driven
+      engineering solutions.
+    </p>
+  </div>
+
+  <div class="photo-frame">
+    <img src="assets/images/profile.jpg" alt="Sanket Kumar">
+  </div>
+
+</section>
+
+<!-- FEATURED PROJECTS (UNCHANGED TEMPLATE) -->
+<section class="section">
+  <h2>Featured Projects</h2>
+  <br>
+
+  <div class="grid">
+
+    <a href="projects/engine.html">
+      <div class="project-card">
+        <img src="assets/images/engine.jpg">
+        <div class="content">
+          <h3>V6 Engine Assembly</h3>
+          <p>Parametric CAD modeling and motion study in SolidWorks.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="projects/truss.html">
+      <div class="project-card">
+        <img src="assets/images/truss.jpg">
+        <div class="content">
+          <h3>Truss Stress Analysis</h3>
+          <p>Structural FEA and factor of safety analysis in ANSYS.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="projects/ml.html">
+      <div class="project-card">
+        <img src="assets/images/ml.jpg">
+        <div class="content">
+          <h3>Failure Prediction Model</h3>
+          <p>Machine learning based predictive maintenance system.</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+© 2025 Sanket Kumar
+</footer>
+
+</body>
+</html>
