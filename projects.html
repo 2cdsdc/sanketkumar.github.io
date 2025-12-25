@@ -3,41 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Portfolio | Archive</title>
+    <title>Archive | Logbook</title>
 </head>
 <body>
-    <nav style="mix-blend-mode: normal; color: black; background: white; border-bottom: 1px solid #eee;">
-        <div style="font-weight: 800; color: black;">SK.</div>
-        <div class="nav-links"><a href="index.html" style="color: black;">HOME</a> <a href="projects.html" style="color: black;">PROJECTS</a></div>
-    </nav>
+    <div class="diary-container">
+        <nav><a href="index.html">Index</a> <a href="projects.html">Archive</a> <a href="contact.html">Connect</a></nav>
 
-    <div class="project-container">
-        <h2 style="font-size: 3rem; margin-bottom: 60px;">Selected Works</h2>
-        
-        <div class="bento-grid">
-            <div class="bento-item large" onclick="location.href='project/cad-engine.html'">
-                <img src="assets/images/cad-bg.jpg" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7);" onerror="this.src='https://via.placeholder.com/800x800'">
-                <div class="item-content">
-                    <span style="color: white; font-weight: 800; font-size: 0.7rem; letter-spacing: 2px;">CAD DESIGN</span>
-                    <h3 style="color: white; font-size: 2.5rem;">V6 Engine Assembly</h3>
-                </div>
-            </div>
+        <h2 style="font-size: 2.5rem; margin-bottom: 50px; border-bottom: 2px solid var(--ink); display: inline-block;">Project Logbook</h2>
 
-            <div class="bento-item" onclick="location.href='project/simulation-truss.html'">
-                <div style="padding: 40px;">
-                    <span style="color: var(--accent); font-weight: 800; font-size: 0.7rem;">SIMULATION</span>
-                    <h3 style="margin-top: 20px;">Stress Analysis</h3>
-                    <p style="margin-top: 10px; color: #64748b; font-size: 0.9rem;">FEA analysis of bridge trusses using Ansys.</p>
-                </div>
-            </div>
+        <div class="entry">
+            <span class="date">ENTRY #01 // CAD_ASSEMBLY</span>
+            <h3>V6 Radial Engine Modeling</h3>
+            <p style="margin: 15px 0;">Modeling 150+ parts. Key focus on tolerance stack-up and thermal expansion analysis in SolidWorks.</p>
+            <img src="assets/images/cad-bg.jpg" style="width: 100%; border: 1px solid #ddd; margin-top: 10px;">
+            <br><br>
+            <a href="project/cad-engine.html" style="font-family:'JetBrains Mono'; font-size:0.8rem; color: var(--accent);">READ_FULL_PROCESS →</a>
+        </div>
 
-            <div class="bento-item">
-                <div style="padding: 40px;">
-                    <span style="color: var(--accent); font-weight: 800; font-size: 0.7rem;">DATA SCIENCE</span>
-                    <h3 style="margin-top: 20px;">Failure Prediction</h3>
-                    <p style="margin-top: 10px; color: #64748b; font-size: 0.9rem;">ML model for industrial maintenance.</p>
-                </div>
-            </div>
+        <div class="entry">
+            <span class="date">ENTRY #02 // CAE_SIMULATION</span>
+            <h3>Truss Stress Analysis</h3>
+            <p style="margin: 15px 0;">FEA testing to identify failure points under variable loading conditions using Ansys Workbench.</p>
+            <a href="project/simulation-truss.html" style="font-family:'JetBrains Mono'; font-size:0.8rem; color: var(--accent);">READ_FULL_PROCESS →</a>
         </div>
     </div>
 </body>
