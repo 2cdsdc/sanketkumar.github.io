@@ -3,149 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Kumar | Mechanical Engineer Portfolio</title>
+    <title>Sanket Kumar | Mechanical Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* --- CSS STYLES --- */
         :root {
-            --primary-color: #2c3e50; /* Deep Engineering Blue */
-            --accent-color: #e67e22;  /* Industrial Orange */
-            --bg-light: #f4f7f6;
-            --text-dark: #333;
-            --white: #ffffff;
+            --bg-dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-glow: #38bdf8; /* Cyan Glow */
+            --industrial-orange: #fb923c;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: var(--bg-dark);
+            /* Blueprint Grid Background */
+            background-image: 
+                linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
 
-        /* Navigation */
+        h1, h2, .logo {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Glassmorphism Navigation --- */
         nav {
-            background: var(--primary-color);
-            padding: 1rem 5%;
+            backdrop-filter: blur(10px);
+            background: var(--glass);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1.5rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            color: white;
         }
 
-        nav .logo { font-weight: bold; font-size: 1.5rem; letter-spacing: 1px; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
-        nav ul li a:hover { color: var(--accent-color); }
-
-        /* Hero Section */
+        /* --- Hero Section with 3D Animation --- */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
-                        url('https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=1600') center/cover;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
             text-align: center;
-            padding: 0 20px;
+            position: relative;
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 25px; opacity: 0.9; }
-        .btn {
-            padding: 12px 30px;
-            background: var(--accent-color);
+        .hero-content {
+            z-index: 2;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            background: linear-gradient(to right, #fff, var(--accent-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        /* 3D Floating Button */
+        .btn-3d {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--industrial-orange), #ea580c);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn:hover { background: #d35400; transform: translateY(-2px); }
-
-        /* Sections */
-        section { padding: 80px 10%; }
-        h2 { text-align: center; margin-bottom: 40px; font-size: 2.5rem; color: var(--primary-color); }
-
-        /* Skills Grid */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            box-shadow: 0 10px 20px rgba(234, 88, 12, 0.3);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
         }
 
-        .skill-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-bottom: 4px solid var(--accent-color);
+        .btn-3d:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(234, 88, 12, 0.5);
         }
 
-        .skill-card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 15px; }
+        /* --- Tech Cards (Glass) --- */
+        section { padding: 100px 10%; }
 
-        /* Projects Grid */
-        .projects-grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 200px;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #666;
-        }
-
-        .project-info { padding: 20px; }
-        .tag {
-            display: inline-block;
-            background: #eee;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: white;
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
-            padding: 40px 0;
-            margin-top: 50px;
+            transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Responsive */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: var(--accent-glow);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card:hover::before { opacity: 1; }
+
+        .card i {
+            font-size: 3.5rem;
+            color: var(--accent-glow);
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px var(--accent-glow));
+        }
+
+        /* --- Project Showcase --- */
+        .project-card {
+            background: #1e293b;
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border: 1px solid var(--glass-border);
+        }
+
+        .project-overlay {
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 100%;
+            border-radius: 15px;
+        }
+
+        .project-info { z-index: 1; }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsiveness --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            nav ul { display: none; }
         }
     </style>
 </head>
@@ -153,81 +189,65 @@
 
     <nav>
         <div class="logo">SANKET KUMAR</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div style="display: flex; gap: 20px;">
+            <a href="#work" style="color: white; text-decoration: none;">WORK</a>
+            <a href="#skills" style="color: white; text-decoration: none;">SKILLS</a>
+        </div>
     </nav>
 
-    <header class="hero" id="home">
-        <h1>Mechanical Engineer & Designer</h1>
-        <p>Specializing in CAD Design | FEA Simulation | Computational Analysis</p>
-        <a href="#projects" class="btn">View My Portfolio</a>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>ENGINEERING THE FUTURE</h1>
+            <p>Mechanical Engineering Student | CAD Designer | Simulation Analyst</p>
+            <a href="#work" class="btn-3d">EXPLORE MY PROJECTS</a>
+        </div>
     </header>
 
     <section id="skills">
-        <h2>Technical Core</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <i class="fas fa-drafting-compass"></i>
-                <h3>CAD Modeling</h3>
-                <p>Expert in SolidWorks, CATIA, and AutoCAD. Creating complex assemblies and technical drawings.</p>
+        <h2 style="text-align: center; margin-bottom: 50px;">Technical Arsenal</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-cube"></i>
+                <h3>3D CAD Design</h3>
+                <p>Advanced Surface Modeling & Complex Assemblies in SolidWorks.</p>
             </div>
-            <div class="skill-card">
+            <div class="card">
+                <i class="fas fa-bolt"></i>
+                <h3>FEA Analysis</h3>
+                <p>Structural & Fluid Dynamics Simulations using ANSYS.</p>
+            </div>
+            <div class="card">
                 <i class="fas fa-microchip"></i>
-                <h3>FEA / Simulation</h3>
-                <p>Structural and thermal analysis using ANSYS Workbench. Validating designs for real-world stress.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-cogs"></i>
-                <h3>Manufacturing</h3>
-                <p>Knowledge of GD&T, CNC programming, and DFM (Design for Manufacturing) principles.</p>
+                <h3>Design for Manufacturing</h3>
+                <p>Expertise in DFM, DFA, and Technical Drawing Standards.</p>
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Key Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-img">SOLIDWORKS ASSEMBLY</div>
+    <section id="work">
+        <h2 style="text-align: center; margin-bottom: 50px;">Selected Projects</h2>
+        <div class="grid">
+            <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800');">
+                <div class="project-overlay"></div>
                 <div class="project-info">
-                    <span class="tag">SolidWorks</span>
-                    <h3>Internal Combustion Engine</h3>
-                    <p>Designed a 4-cylinder engine assembly including pistons, crankshaft, and valves with motion analysis.</p>
+                    <span style="color: var(--accent-glow); font-weight: bold;">SOLIDWORKS</span>
+                    <h3>High-Performance V6 Engine</h3>
+                    <p>Complete assembly with motion study and tolerance analysis.</p>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-img">ANSYS SIMULATION</div>
+            <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800');">
+                <div class="project-overlay"></div>
                 <div class="project-info">
-                    <span class="tag">Ansys Mechanical</span>
-                    <h3>Bridge Truss Analysis</h3>
-                    <p>Conducted static structural analysis to determine deformation and safety factors under maximum load.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-info">
-                    <span class="tag">Thermal Analysis</span>
-                    <h3>Heat Sink Optimization</h3>
-                    <p>Optimized fin geometry for electronic cooling systems using steady-state thermal simulation.</p>
+                    <span style="color: var(--accent-glow); font-weight: bold;">ANSYS</span>
+                    <h3>Aerodynamic Wing Study</h3>
+                    <p>CFD analysis of airfoil profiles at supersonic speeds.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" style="text-align: center;">
-        <h2>Get In Touch</h2>
-        <p>I am currently looking for Internship/Graduate opportunities.</p>
-        <div style="margin-top: 20px;">
-            <a href="mailto:your.email@example.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Sanket Kumar | Mechanical Engineer</p>
-        <p>Connect with me on <a href="#" style="color: var(--accent-color);">LinkedIn</a></p>
+    <footer style="padding: 50px 10%; text-align: center; border-top: 1px solid var(--glass-border);">
+        <p>&copy; 2025 SANKET KUMAR. Designed for Impact.</p>
     </footer>
 
 </body>
