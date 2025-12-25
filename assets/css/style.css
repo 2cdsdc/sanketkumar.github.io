@@ -1,80 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
 
 :root {
-    --bg: #080808;
+    --bg: #000000;
+    --text: #ffffff;
     --accent: #ffffff;
-    --accent-dim: #555555;
-    --glass: rgba(255, 255, 255, 0.03);
-    --border: rgba(255, 255, 255, 0.08);
+    --muted: #888888;
+    --border: rgba(255, 255, 255, 0.1);
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg);
-    color: #fff;
+    color: var(--text);
     font-family: 'Inter', sans-serif;
+    line-height: 1.5;
     overflow-x: hidden;
-    perspective: 1500px;
 }
 
-/* 3D Glass Header */
+/* Davis Ryan Style Navigation */
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 6%;
     display: flex;
     justify-content: space-between;
-    padding: 30px 8%;
-    position: fixed;
-    width: 100%;
+    align-items: center;
     z-index: 1000;
-    mix-blend-mode: difference;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
 }
 
-.nav-link {
-    font-family: 'JetBrains Mono';
+.nav-links a {
+    color: var(--text);
     text-decoration: none;
-    color: #fff;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1px;
     margin-left: 40px;
-    opacity: 0.6;
-    transition: 0.4s;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
 
-.nav-link:hover { opacity: 1; text-shadow: 0 0 10px #fff; }
+.nav-links a:hover { color: var(--muted); }
 
-/* The 3D Photo Container */
-.photo-box {
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero-content { flex: 1; z-index: 2; }
+
+.hero-content h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+/* 3D Image Frame */
+.hero-image-wrapper {
+    flex: 1;
+    height: 80vh;
+    perspective: 2000px;
+}
+
+.hero-image-3d {
     width: 100%;
-    height: 550px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.1s ease-out;
+    height: 100%;
+    background: url('assets/images/profile.jpg') center/cover;
+    border-radius: 4px;
+    transform: rotateY(-10deg) rotateX(5deg);
+    transition: 0.5s ease;
+    box-shadow: -20px 20px 50px rgba(0,0,0,0.5);
 }
 
-.photo-box img {
+/* Project Cinematic Card */
+.project-strip {
+    height: 70vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-strip img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
-    filter: grayscale(100%) contrast(110%);
-    transition: 0.5s;
-    border: 1px solid var(--border);
+    opacity: 0.4;
+    transition: 0.8s;
 }
 
-.photo-box:hover img { filter: grayscale(0%); }
+.project-strip:hover img { opacity: 0.6; transform: scale(1.05); }
 
-/* Project Cards with Depth */
-.project-card {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    padding: 40px;
-    border-radius: 0px; /* Sharp edges look more premium for engineering */
-    transform-style: preserve-3d;
-    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    cursor: pointer;
+.project-info {
+    z-index: 2;
+    text-align: center;
 }
 
-.project-card:hover {
-    background: rgba(255,255,255,0.05);
-    transform: translateZ(50px) rotateX(4deg);
+.btn-outline {
+    padding: 12px 30px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
 
-.mono { font-family: 'JetBrains Mono'; color: var(--accent-dim); text-transform: uppercase; font-size: 0.7rem; }
+.btn-outline:hover { background: white; color: black; }
