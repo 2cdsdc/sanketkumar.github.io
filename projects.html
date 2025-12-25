@@ -5,9 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Projects | Sanket Kumar</title>
-<meta name="description" content="CAD and CAE projects by Mechanical Engineering student Sanket Kumar.">
+<meta name="description" content="CAD and Simulation projects by Mechanical Engineering student Sanket Kumar.">
 
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ---------- FILTER TABS ---------- */
+.filter-tabs {
+  display: flex;
+  gap: 15px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.85rem;
+}
+
+.filter-btn i {
+  margin-right: 8px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(79,156,249,0.1);
+}
+
+/* ---------- TAG COLORS ---------- */
+.tag-cad {
+  background: rgba(79,156,249,0.15);
+  color: var(--accent);
+}
+
+.tag-cae {
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
+}
+</style>
+
 </head>
 
 <body>
@@ -23,122 +68,128 @@
   </div>
 </nav>
 
-<!-- ================= CAD PROJECTS ================= -->
 <section class="section">
-  <h1>CAD Projects</h1>
+
+  <h1>Projects</h1>
   <p>
-    Surface and mechanical CAD projects developed using SolidWorks,
-    focusing on design accuracy, surfacing, ergonomics, and assemblies.
+    Selected CAD design and engineering simulation projects demonstrating
+    mechanical design, surfacing, and CAE analysis skills.
   </p>
+
+  <!-- FILTER TABS -->
+  <div class="filter-tabs">
+    <button class="filter-btn active" onclick="filterProjects('all')">
+      <i class="fa-solid fa-layer-group"></i> All
+    </button>
+    <button class="filter-btn" onclick="filterProjects('cad')">
+      <i class="fa-solid fa-cube"></i> CAD
+    </button>
+    <button class="filter-btn" onclick="filterProjects('cae')">
+      <i class="fa-solid fa-chart-line"></i> Simulation
+    </button>
+  </div>
 
   <div class="grid">
 
+    <!-- ================= CAD PROJECTS ================= -->
+
     <!-- ABB ROBOT ARM -->
-    <div class="project-card">
+    <div class="project-card cad">
       <img src="assets/images/abb1.png" alt="ABB Robot Arm CAD">
       <div class="content">
-        <h3>ABB Robot Arm</h3>
-        <p>Industrial robotic arm CAD assembly with articulated joints.</p>
+        <h3><i class="fa-solid fa-robot"></i> ABB Robot Arm</h3>
+        <p>Industrial robotic arm CAD assembly with joint mechanisms.</p>
         <div class="project-tags">
-          <span>SolidWorks</span>
-          <span>Assembly</span>
-          <span>Robotics</span>
+          <span class="tag-cad">SolidWorks</span>
+          <span class="tag-cad">CAD Assembly</span>
+          <span class="tag-cad">Robotics</span>
         </div>
         <a href="project/abb-robot-arm.html">View Project →</a>
       </div>
     </div>
 
     <!-- FIGHTER JET SURFACE -->
-    <div class="project-card">
+    <div class="project-card cad">
       <img src="assets/images/jet1.png" alt="Fighter Jet Surface CAD">
       <div class="content">
-        <h3>Fighter Jet – Surface Model</h3>
-        <p>Advanced aircraft surface modeling with aerodynamic focus.</p>
+        <h3><i class="fa-solid fa-jet-fighter"></i> Fighter Jet – Surface Model</h3>
+        <p>Advanced surface modeling of a fighter aircraft.</p>
         <div class="project-tags">
-          <span>SolidWorks</span>
-          <span>Surface Modeling</span>
-          <span>Aerospace</span>
+          <span class="tag-cad">SolidWorks</span>
+          <span class="tag-cad">Surface Modeling</span>
+          <span class="tag-cad">Aerospace</span>
         </div>
         <a href="project/fighter-jet.html">View Project →</a>
       </div>
     </div>
 
     <!-- FIGHTER JET ENGINE -->
-    <div class="project-card">
+    <div class="project-card cad">
       <img src="assets/images/engine1.png" alt="Fighter Jet Engine CAD">
       <div class="content">
-        <h3>Fighter Jet Engine CAD</h3>
-        <p>Detailed jet engine CAD model with internal components.</p>
+        <h3><i class="fa-solid fa-gears"></i> Fighter Jet Engine</h3>
+        <p>Detailed CAD model of jet engine internals with cut sections.</p>
         <div class="project-tags">
-          <span>SolidWorks</span>
-          <span>Engine Design</span>
-          <span>Aerospace</span>
+          <span class="tag-cad">SolidWorks</span>
+          <span class="tag-cad">Engine Design</span>
+          <span class="tag-cad">Aerospace</span>
         </div>
         <a href="project/fighter-jet-engine.html">View Project →</a>
       </div>
     </div>
 
     <!-- SPORTS CAR -->
-    <div class="project-card">
-      <img src="assets/images/car1.png" alt="Sports Car CAD">
+    <div class="project-card cad">
+      <img src="assets/images/sports-car/car1.png" alt="Sports Car CAD">
       <div class="content">
-        <h3>Sports Car – Surface Model</h3>
-        <p>Automotive exterior CAD focused on styling and aerodynamics.</p>
+        <h3><i class="fa-solid fa-car"></i> Sports Car – Surface CAD</h3>
+        <p>Automotive surface CAD focused on styling and aerodynamics.</p>
         <div class="project-tags">
-          <span>SolidWorks</span>
-          <span>Surface Modeling</span>
-          <span>Automotive</span>
+          <span class="tag-cad">SolidWorks</span>
+          <span class="tag-cad">Surface Modeling</span>
+          <span class="tag-cad">Automotive</span>
         </div>
         <a href="project/sports-car.html">View Project →</a>
       </div>
     </div>
 
     <!-- MEDICAL CHAIR -->
-    <div class="project-card">
-      <img src="assets/images/chair1.png" alt="Medical Chair CAD">
-      <div class="content">
-        <h3>Medical Chair with Integrated Heaters</h3>
-        <p>
-          Modified medical chair CAD design with embedded heating system
-          to enhance patient comfort.
-        </p>
-        <div class="project-tags">
-          <span>SolidWorks</span>
-          <span>Product Design</span>
-          <span>Ergonomics</span>
-        </div>
-        <a href="project/medical-chair.html">View Project →</a>
-      </div>
+<div class="project-card cad">
+  <img src="assets/images/medical-chair1.png" alt="Medical Chair CAD">
+  <div class="content">
+    <h3><i class="fa-solid fa-wheelchair"></i> Medical Chair with Integrated Heaters</h3>
+    <p>
+      Modified medical chair CAD design featuring integrated heating
+      elements to improve patient comfort and ergonomics.
+    </p>
+    <div class="project-tags">
+      <span class="tag-cad">SolidWorks</span>
+      <span class="tag-cad">Product Design</span>
+      <span class="tag-cad">Ergonomics</span>
+      <span class="tag-cad">Medical Device</span>
     </div>
-
+    <a href="project/medical-chair.html">View Project →</a>
   </div>
-</section>
+</div>
 
-<!-- ================= CAE PROJECTS ================= -->
-<section class="section">
-  <h1>CAE / Simulation Projects</h1>
-  <p>
-    Engineering simulations using ANSYS for thermal, structural,
-    and coupled physics analysis.
-  </p>
 
-  <div class="grid">
+    <!-- ================= CAE PROJECT ================= -->
 
-    <!-- LASER CUT SIMULATION -->
-    <div class="project-card">
+    <div class="project-card cae">
       <div class="content">
-        <h3>Coupled Thermal–Structural Analysis of Laser Cutting</h3>
+        <h3><i class="fa-solid fa-temperature-high"></i>
+          Laser Cutting – Coupled Thermal & Structural
+        </h3>
         <p>
-          Transient CAE simulation evaluating temperature rise and
-          stress evolution during laser cutting.
+          Transient CAE analysis evaluating temperature and stress response
+          during laser cutting using ANSYS.
         </p>
-
         <div class="project-tags">
-          <span>ANSYS 2024 R1</span>
-          <span>Transient Thermal</span>
-          <span>Structural</span>
+          <span class="tag-cae">ANSYS 2024 R1</span>
+          <span class="tag-cae">Transient Thermal</span>
+          <span class="tag-cae">Structural</span>
+          <span class="tag-cae">APDL</span>
         </div>
-
         <a href="project/laser-cut-thermal-structural.html">View Project →</a>
       </div>
     </div>
@@ -149,6 +200,21 @@
 <footer>
   © 2025 Sanket Kumar
 </footer>
+
+<script>
+function filterProjects(type) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.closest('.filter-btn').classList.add('active');
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    if (type === 'all' || card.classList.contains(type)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
 
 </body>
 </html>
