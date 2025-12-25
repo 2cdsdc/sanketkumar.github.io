@@ -1,82 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Kumar | Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #f8fafc; --primary: #4f46e5; --text: #1e293b; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); padding: 50px 10%; }
-        nav { position: fixed; top: 0; left: 0; width: 100%; background: white; padding: 20px 10%; display: flex; justify-content: space-between; border-bottom: 1px solid #eee; z-index: 10; }
-        nav a { text-decoration: none; color: var(--text); font-weight: 600; margin-left: 20px; }
-        
-        .header { margin-top: 60px; text-align: center; padding: 40px 0; }
-        .filter-btns { text-align: center; margin-bottom: 40px; }
-        .filter-btn { padding: 10px 20px; border: none; background: white; border: 1px solid #ddd; border-radius: 50px; cursor: pointer; margin: 5px; font-weight: 600; transition: 0.3s; }
-        .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: white; border-radius: 20px; padding: 20px; border: 1px solid #f1f5f9; transition: 0.3s; cursor: pointer; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .card img { width: 100%; border-radius: 15px; margin-bottom: 15px; }
-        .tag { font-size: 0.75rem; color: var(--primary); font-weight: 800; text-transform: uppercase; }
-
-        /* Modal Logic */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; }
-        .modal-content { background: white; padding: 40px; border-radius: 20px; width: 90%; max-width: 800px; max-height: 90vh; overflow-y: auto; position: relative; }
-        .close { position: absolute; top: 20px; right: 20px; font-size: 2rem; cursor: pointer; }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Archive | Sanket Kumar</title>
 </head>
 <body>
     <nav>
-        <div style="font-weight: 800;">SANKET.</div>
-        <div><a href="index.html">Home</a> <a href="projects.html">Projects</a> <a href="contact.html">Contact</a></div>
+        <div style="font-weight: 800; font-size: 1.3rem;">SK.</div>
+        <div class="nav-links"><a href="index.html">Identity</a> <a href="projects.html">Archive</a> <a href="contact.html">Connect</a></div>
     </nav>
 
-    <div class="header">
-        <h1>Technical Projects</h1>
-    </div>
+    <div style="padding: 140px 10%;">
+        <h2 style="font-size: 3rem; margin-bottom: 50px;">Selected Engineering Work</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;">
+            <div class="card" style="grid-column: span 8;">
+                <a href="project/cad-engine.html" style="text-decoration:none; color:inherit;">
+                    <img src="assets/images/cad-thumb.jpg" style="height: 400px;">
+                    <div style="margin-top: 20px;">
+                        <span style="color:var(--accent); font-weight:700; font-size:0.8rem; text-transform:uppercase;">Mechanical Design</span>
+                        <h3>V6 Radial Engine: Comprehensive Assembly</h3>
+                        <p style="color:var(--text-muted); margin-top:10px;">Modeling 140+ individual parts with tolerance stack-up analysis.</p>
+                    </div>
+                </a>
+            </div>
 
-    <div class="filter-btns">
-        <button class="filter-btn active" onclick="filter('all')">All</button>
-        <button class="filter-btn" onclick="filter('cad')">CAD</button>
-        <button class="filter-btn" onclick="filter('sim')">Simulation</button>
-        <button class="filter-btn" onclick="filter('ml')">Data Science/ML</button>
-    </div>
-
-    <div class="grid">
-        <div class="card" data-type="cad" onclick="openModal('V6 Engine', 'Detailed CAD assembly of a V6 engine...', 'cad-video.mp4')">
-            <img src="https://via.placeholder.com/300x200" alt="CAD">
-            <span class="tag">SolidWorks</span>
-            <h3>V6 Engine Assembly</h3>
+            <div class="card" style="grid-column: span 4;">
+                <a href="project/simulation-truss.html" style="text-decoration:none; color:inherit;">
+                    <img src="assets/images/sim-thumb.jpg" style="height: 400px;">
+                    <div style="margin-top: 20px;">
+                        <span style="color:var(--accent); font-weight:700; font-size:0.8rem; text-transform:uppercase;">CAE / Simulation</span>
+                        <h3>Static Structural Analysis</h3>
+                    </div>
+                </a>
+            </div>
         </div>
-        </div>
-
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="m-title"></h2>
-            <p id="m-desc" style="margin: 20px 0; color: #64748b;"></p>
-            <video id="m-video" controls style="width:100%; border-radius:15px;"></video>
-        </div>
     </div>
-
-    <script>
-        function filter(type) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            document.querySelectorAll('.card').forEach(c => {
-                c.style.display = (type === 'all' || c.dataset.type === type) ? 'block' : 'none';
-            });
-        }
-        function openModal(title, desc, video) {
-            document.getElementById('m-title').innerText = title;
-            document.getElementById('m-desc').innerText = desc;
-            document.getElementById('m-video').src = video;
-            document.getElementById('projectModal').style.display = 'flex';
-        }
-        function closeModal() { document.getElementById('projectModal').style.display = 'none'; }
-    </script>
 </body>
 </html>
