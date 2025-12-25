@@ -3,208 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Kumar | Mechanical Engineer</title>
+    <title>Sanket Kumar | Mechanical Engineering Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --paper-white: #ffffff;
-            --ink-black: #1a1a1a;
-            --blueprint-blue: #004a99; /* Professional technical blue */
-            --border-gray: #d1d5db;
-            --light-gray: #f9fafb;
+            --studio-white: #ffffff;
+            --studio-black: #111111;
+            --industrial-gray: #777777;
+            --accent-orange: #ff5f1f; /* Precision orange used in calipers/tools */
+            --border-light: #e5e7eb;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--paper-white);
-            color: var(--ink-black);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            background-color: var(--studio-white);
+            color: var(--studio-black);
+            font-family: 'Space Grotesk', sans-serif;
             display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* --- SIDE NAVIGATION --- */
-        nav {
-            width: 250px;
-            height: 100vh;
-            border-right: 1px solid var(--border-gray);
-            padding: 40px 25px;
-            position: fixed;
-            background: var(--light-gray);
+        /* --- HEADER --- */
+        header {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-light);
         }
 
-        .nav-logo {
-            font-weight: 600;
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
-            margin-bottom: 50px;
-            display: block;
-            color: var(--blueprint-blue);
+        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -1px; }
+        .contact-link { color: var(--accent-orange); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 100px 5%;
+            max-width: 1200px;
         }
 
-        nav ul { list-style: none; }
-        nav ul li { margin-bottom: 20px; }
-        nav ul li a {
-            text-decoration: none;
-            color: var(--ink-black);
-            font-size: 0.9rem;
-            font-weight: 400;
-            transition: 0.2s;
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.9;
+            font-weight: 700;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
         }
 
-        nav ul li a:hover { color: var(--blueprint-blue); padding-left: 5px; }
-
-        /* --- MAIN CONTENT --- */
-        main {
-            margin-left: 250px;
-            padding: 80px 10%;
-            width: 100%;
-        }
-
-        .header-section {
-            border-bottom: 2px solid var(--ink-black);
-            padding-bottom: 40px;
-            margin-bottom: 60px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1rem;
-            color: var(--blueprint-blue);
+        .hero-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
             text-transform: uppercase;
         }
 
-        /* --- PROJECT GRID --- */
-        .section-label {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.8rem;
-            color: #666;
-            margin-bottom: 30px;
-            display: block;
-        }
+        .hero-meta b { display: block; color: var(--industrial-gray); margin-bottom: 5px; }
 
-        .project-row {
+        /* --- PROJECT GRID --- */
+        .work {
+            padding: 0 5% 100px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border-light);
+            padding: 30px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 500px;
+        }
+
+        .project-card:hover {
+            background-color: var(--studio-black);
+            color: var(--studio-white);
+        }
+
+        .project-card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .project-tags {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            margin-bottom: 40px;
+            opacity: 0.6;
         }
 
         .project-image {
             width: 100%;
-            aspect-ratio: 16/9;
-            background: #eee;
-            border: 1px solid var(--border-gray);
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Makes renders look like technical drawings */
-            filter: grayscale(1) contrast(1.1);
-        }
-
-        .project-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .project-meta {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.8rem;
-            background: #f0f4f8;
-            padding: 4px 10px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        /* --- TECHNICAL TITLE BLOCK --- */
-        .iso-footer {
-            margin-top: 100px;
-            border: 1px solid var(--ink-black);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            font-family: 'Roboto Mono', monospace;
+            height: 250px;
+            background: #f3f4f6;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 0.7rem;
+            color: #ccc;
         }
 
-        .iso-footer div {
-            padding: 15px;
-            border-right: 1px solid var(--ink-black);
+        .project-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px solid currentColor;
+            width: fit-content;
         }
 
-        .iso-footer div:last-child { border-right: none; }
-        .iso-footer b { display: block; color: var(--blueprint-blue); }
+        /* --- FOOTER --- */
+        footer {
+            margin-top: auto;
+            padding: 60px 5%;
+            background: var(--studio-black);
+            color: var(--studio-white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        /* Responsive Fix */
+        @media (max-width: 800px) {
+            .work { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <span class="nav-logo">SANKET KUMAR</span>
-        <ul>
-            <li><a href="#work">PROJECTS</a></li>
-            <li><a href="#about">ABOUT ME</a></li>
-            <li><a href="#skills">CAPABILITIES</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="logo">SANKET KUMAR</div>
+        <a href="mailto:sanket@example.com" class="contact-link">GET_IN_TOUCH</a>
+    </header>
 
     <main>
-        <section class="header-section">
-            <span class="subtitle">Mechanical Design & Simulation</span>
-            <h1>Engineering Portfolio</h1>
-            <p style="max-width: 600px; color: #555;">
-                Providing data-driven design solutions using CAD and FEA. Focused on structural integrity, manufacturability, and thermal optimization.
-            </p>
+        <section class="hero">
+            <h1>Mechanical<br>Systems Engineer.</h1>
+            
+            <div class="hero-meta">
+                <div><b>Expertise</b>CAD / FEA / CFD</div>
+                <div><b>Software</b>SolidWorks / ANSYS</div>
+                <div><b>Location</b>Jaipur, India</div>
+                <div><b>Status</b>Open for Projects</div>
+            </div>
         </section>
 
-        <span class="section-label">SELECTED WORK // 2024-2025</span>
-        
-        <div id="work">
-            <div class="project-row">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=800" alt="CAD Render">
+        <section class="work">
+            <div class="project-card">
+                <div>
+                    <div class="project-tags">PRJ // 001 — SOLIDWORKS</div>
+                    <h2>V6 Combustion Engine Design</h2>
+                    <div class="project-image">IMAGE_PLACEHOLDER [3D_RENDER]</div>
+                    <p style="margin-bottom: 20px; font-size: 0.9rem;">High-fidelity assembly with focus on tolerance analysis and motion study.</p>
                 </div>
-                <div class="project-info">
-                    <span class="project-meta">SOLIDWORKS // STATIC ANALYSIS</span>
-                    <h3>High-Pressure Valve Assembly</h3>
-                    <p>Redesigned a hydraulic valve assembly to reduce material weight by 15% while maintaining a Factor of Safety (FOS) of 2.5.</p>
-                </div>
+                <a href="#" class="project-link">VIEW CASE STUDY</a>
             </div>
 
-            <div class="project-row">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" alt="Simulation Result">
+            <div class="project-card">
+                <div>
+                    <div class="project-tags">PRJ // 002 — ANSYS MECHANICAL</div>
+                    <h2>Aerospace Wing Stress Analysis</h2>
+                    <div class="project-image">IMAGE_PLACEHOLDER [FEA_MAP]</div>
+                    <p style="margin-bottom: 20px; font-size: 0.9rem;">Structural validation of composite wing spars under high-velocity load scenarios.</p>
                 </div>
-                <div class="project-info">
-                    <span class="project-meta">ANSYS // THERMAL ANALYSIS</span>
-                    <h3>Heat Sink Optimization</h3>
-                    <p>Performed steady-state thermal analysis on an electronic cooling fin array to improve heat dissipation efficiency by 12%.</p>
-                </div>
+                <a href="#" class="project-link">VIEW CASE STUDY</a>
             </div>
-        </div>
-
-        <div class="iso-footer">
-            <div><b>ENGINEER:</b> SANKET KUMAR</div>
-            <div><b>DOC NO:</b> PORTFOLIO-01</div>
-            <div><b>UNITS:</b> METRIC (mm)</div>
-            <div><b>REVISION:</b> v1.02</div>
-        </div>
+        </section>
     </main>
+
+    <footer>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.7rem;">© 2025 ALL RIGHTS RESERVED</div>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.7rem;">SANKET_KUMAR_PORTFOLIO_v2.0</div>
+    </footer>
 
 </body>
 </html>
