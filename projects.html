@@ -3,13 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Projects | Sanket Kumar</title>
+<meta name="description" content="Mechanical and Aerospace CAD projects by Sanket Kumar.">
 
 <link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+.projects-header {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 0 20px;
+}
+
+.projects-header h1 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+}
+
+.projects-header p {
+  color: #cbd5e1;
+  max-width: 700px;
+}
+
+.projects-grid {
+  max-width: 1100px;
+  margin: 50px auto 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.5);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 22px;
+}
+
+.project-content h3 {
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.tools {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tools span {
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(79,156,249,0.15);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.project-content a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-content a:hover {
+  text-decoration: underline;
+}
+</style>
+
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <strong>Sanket Kumar</strong>
   <div>
@@ -20,53 +109,72 @@
   </div>
 </nav>
 
-<section class="section">
-  <h1>CAD Projects</h1>
-  <p>High-quality CAD modeling projects developed using SolidWorks.</p>
+<!-- HEADER -->
+<section class="projects-header section">
+  <h1>Projects</h1>
+  <p>
+    A selection of real engineering projects demonstrating my skills in
+    CAD design, surface modeling, and aerospace mechanical assemblies.
+  </p>
+</section>
 
-  <div class="grid">
+<!-- PROJECTS GRID -->
+<section class="projects-grid">
 
-    <!-- ABB Robot Arm -->
-    <div class="project-card">
-      <img src="assets/images/abb1.png" alt="ABB Robot Arm">
-      <div class="content">
-        <h3>ABB Robot Arm</h3>
-        <p>Industrial robotic arm CAD assembly with multiple joints.</p>
-        <a href="project/abb-robot-arm.html">View Project →</a>
+  <!-- ABB ROBOT ARM -->
+  <div class="project-card">
+    <img src="assets/images/abb1.png" alt="ABB Robot Arm CAD Model">
+    <div class="project-content">
+      <h3>ABB Robot Arm</h3>
+      <p>
+        Industrial robotic arm CAD assembly focusing on joint mechanisms,
+        structural design, and manufacturable components.
+      </p>
+      <div class="tools">
+        <span>SolidWorks</span>
+        <span>CAD Assembly</span>
+        <span>Mechanical Design</span>
       </div>
+      <a href="project/abb-robot-arm.html">View Project →</a>
     </div>
-
-    <!-- Fighter Jet -->
-    <div class="project-card">
-      <img src="assets/images/fighter-jet1.png" alt="Fighter Jet CAD">
-      <div class="content">
-        <h3>Fighter Jet – Surface Model</h3>
-        <p>Advanced surface modeling of a fighter jet.</p>
-        <a href="project/fighter-jet.html">View Project →</a>
-      </div>
-    </div>
-
-    <!-- Fighter Jet Engine -->
-    <div class="project-card">
-      <img src="assets/images/jet-engine1.png" alt="Jet Engine CAD">
-      <div class="content">
-        <h3>Fighter Jet Engine</h3>
-        <p>Detailed CAD model of aircraft engine components.</p>
-        <a href="project/jet-engine.html">View Project →</a>
-      </div>
-    </div>
-
-    <!-- Sports Car -->
-    <div class="project-card">
-      <img src="assets/images/car1.png" alt="Sports Car CAD">
-      <div class="content">
-        <h3>Sports Car CAD Model</h3>
-        <p>Complete exterior CAD design of a sports car.</p>
-        <a href="project/sports-car.html">View Project →</a>
-      </div>
-    </div>
-
   </div>
+
+  <!-- FIGHTER JET SURFACE MODEL -->
+  <div class="project-card">
+    <img src="assets/images/jet1.png" alt="Fighter Jet Surface CAD Model">
+    <div class="project-content">
+      <h3>Fighter Jet – Surface CAD Model</h3>
+      <p>
+        High-fidelity surface modeling of a fighter aircraft emphasizing
+        aerodynamic form and smooth curvature continuity.
+      </p>
+      <div class="tools">
+        <span>SolidWorks</span>
+        <span>Surface Modeling</span>
+        <span>Aerospace CAD</span>
+      </div>
+      <a href="project/fighter-jet.html">View Project →</a>
+    </div>
+  </div>
+
+  <!-- FIGHTER JET ENGINE -->
+  <div class="project-card">
+    <img src="assets/images/engine1.png" alt="Fighter Jet Engine CAD Model">
+    <div class="project-content">
+      <h3>Fighter Jet Engine CAD Model</h3>
+      <p>
+        Detailed CAD assembly of a fighter jet engine including internal
+        compressor stages, turbine components, and cut-section views.
+      </p>
+      <div class="tools">
+        <span>SolidWorks</span>
+        <span>Engine Design</span>
+        <span>Aerospace</span>
+      </div>
+      <a href="project/fighter-jet-engine.html">View Project →</a>
+    </div>
+  </div>
+
 </section>
 
 <footer>© 2025 Sanket Kumar</footer>
