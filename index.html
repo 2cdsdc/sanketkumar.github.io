@@ -2,47 +2,39 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Sanket Kumar | Identity</title>
+    <title>Sanket Kumar | Mechanical Portfolio</title>
 </head>
 <body>
+
     <nav>
-        <div style="font-family: 'Syne'; font-weight: 800; font-size: 1.5rem;">SANKET</div>
-        <div>
-            <a href="index.html" class="nav-link">HOME</a>
-            <a href="projects.html" class="nav-link">ARCHIVE</a>
-            <a href="contact.html" class="nav-link">CONNECT</a>
+        <div style="font-weight: 900; letter-spacing: 3px;">SANKET KUMAR</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <section style="display: flex; align-items: center; min-height: 100vh; padding: 0 8%;">
-        <div style="flex: 1.4; z-index: 2;">
-            <p class="mono" style="margin-bottom: 20px;">[ Based in India // 2025 ]</p>
-            <h1 style="font-family: 'Syne'; font-size: clamp(4rem, 8vw, 7rem); line-height: 0.9; margin-bottom: 40px;">
-                ENGINEERING <br> <span style="opacity: 0.3;">PRECISION.</span>
-            </h1>
-            <div style="display: flex; gap: 40px;">
-                <a href="assets/resume.pdf" style="color: #fff; text-decoration: none; border-bottom: 1px solid #fff; padding-bottom: 5px; font-weight: 600;">GET RESUME</a>
-                <a href="https://linkedin.com" class="mono" style="text-decoration: none; color: #fff;">LINKEDIN</a>
-                <a href="https://github.com" class="mono" style="text-decoration: none; color: #fff;">GITHUB</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MECHANICAL <br> ENGINEER.</h1>
+            <p>Recent graduate focused on high-precision CAD design, simulation testing, and data intelligence.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="https://linkedin.com" class="btn-outline">LinkedIn</a>
+                <a href="assets/resume.pdf" class="btn-outline">Resume</a>
             </div>
         </div>
-
-        <div style="flex: 1; perspective: 1000px;">
-            <div class="photo-box" id="box">
-                <img src="assets/images/profile.jpg" alt="Sanket Kumar">
-                <div style="position: absolute; top: -20px; right: -20px; font-family: 'JetBrains Mono'; font-size: 0.6rem; opacity: 0.4;">
-                    ROTATION_AXIS: Z-100
-                </div>
-            </div>
+        <div class="hero-image-wrapper">
+            <div class="hero-image-3d" id="tilt"></div>
         </div>
     </section>
 
     <script>
-        const box = document.getElementById('box');
-        document.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.pageX) / 30;
-            const y = (window.innerHeight / 2 - e.pageY) / 30;
-            box.style.transform = `rotateY(${-x}deg) rotateX(${y}deg)`;
+        const tilt = document.getElementById('tilt');
+        window.addEventListener('mousemove', (e) => {
+            let x = (window.innerWidth / 2 - e.pageX) / 40;
+            let y = (window.innerHeight / 2 - e.pageY) / 40;
+            tilt.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
         });
     </script>
 </body>
