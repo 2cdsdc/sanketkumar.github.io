@@ -1,41 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Contact | Sanket Kumar</title>
+<title>Contact | Sanket Kumar</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">SANKET KUMAR</a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
+<nav>
+  <strong>Sanket Kumar</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-    <section style="padding: 150px 10%; min-height: 80vh;">
-        <h1 style="font-size: 3rem; margin-bottom: 40px;">Let's Connect.</h1>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
-            <div>
-                <p style="margin-bottom: 20px;">Email: <strong>sanketku231@gmail.com</strong></p>
-                <p style="margin-bottom: 20px;">Phone: <strong>+91 7895356317</strong></p>
-                <p>Location: India</p>
-            </div>
+<section class="section">
+  <h2>Contact</h2>
 
-            <div>
-                <form action="#" style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="text" placeholder="Name" style="padding: 15px; border: 1px solid #ddd;">
-                    <input type="email" placeholder="Email" style="padding: 15px; border: 1px solid #ddd;">
-                    <textarea placeholder="Message" rows="5" style="padding: 15px; border: 1px solid #ddd;"></textarea>
-                    <button type="submit" class="btn-davis" style="cursor: pointer;">Submit</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <p>
+    📧 sanketku231@gmail.com<br>
+    📱 +91 7895356317
+  </p>
 
+  <form action="https://formspree.io/f/xyzzabcd" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>© Sanket Kumar</footer>
 </body>
 </html>
