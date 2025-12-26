@@ -189,3 +189,42 @@ footer {
     padding: 70px 7%;
   }
 }
+/* ================= PROJECT ICON POLISH ================= */
+
+/* Project card title icon */
+.project-card h3 i {
+  font-size: 1.05rem;
+  margin-right: 10px;
+
+  /* icon badge */
+  background: linear-gradient(
+    135deg,
+    rgba(79,156,249,0.25),
+    rgba(79,156,249,0.08)
+  );
+  color: var(--accent);
+
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: 1px solid rgba(79,156,249,0.35);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.project-card:hover h3 i {
+  transform: scale(1.15) rotate(4deg);
+  box-shadow: 0 8px 18px rgba(79,156,249,0.35);
+}
+
+/* Improve spacing */
+.project-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
