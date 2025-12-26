@@ -358,3 +358,109 @@ footer {
     font-size: 2rem;
   }
 }
+/* ================= HOME PAGE POLISH ================= */
+
+/* Hero container refinement */
+.hero {
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero heading */
+.hero h1 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Hero paragraph */
+.hero p {
+  line-height: 1.75;
+  color: var(--text-dim);
+}
+
+/* Skill chips polish */
+.skill-strip {
+  margin-top: 32px;
+}
+
+.skill {
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+/* Social icons polish */
+.socials a {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.socials a:hover {
+  background: rgba(79,156,249,0.12);
+}
+
+/* Photo frame polish */
+.photo-frame {
+  position: relative;
+}
+
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 32px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(79,156,249,0.25),
+    transparent 60%
+  );
+  z-index: -1;
+}
+
+/* Image refinement */
+.photo-frame img {
+  object-fit: cover;
+}
+
+/* Smooth entrance for hero */
+.hero > div {
+  will-change: transform, opacity;
+}
+
+/* Section spacing harmony */
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Mobile improvements */
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .photo-frame {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
