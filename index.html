@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sanket Kumar | Mechanical Engineering Portfolio</title>
+<title>Sanket’s Portfolio</title>
 
-<meta name="description" content="Mechanical Engineering student portfolio showcasing CAD, CAE, simulation, and machine learning projects.">
+<meta name="description" content="Mechanical Engineer specializing in CAD, CAE, and engineering simulation. Portfolio of Sanket Kumar.">
 
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -106,8 +106,10 @@
   border-radius: 26px;
   opacity: 0;
   transform: translateX(50px);
-  animation: slideIn 1s ease forwards;
-  animation-delay: 0.4s;
+  animation:
+    slideIn 1s ease forwards,
+    floatImage 9s ease-in-out infinite;
+  animation-delay: 0.4s, 1.4s;
 }
 
 /* Image */
@@ -115,14 +117,6 @@
   width: 100%;
   border-radius: 18px;
   box-shadow: 0 35px 70px rgba(0,0,0,0.45);
-}
-
-/* Float */
-.photo-frame {
-  animation:
-    slideIn 1s ease forwards,
-    floatImage 9s ease-in-out infinite;
-  animation-delay: 0.4s, 1.4s;
 }
 
 /* Animations */
@@ -154,10 +148,7 @@
     margin: 0 auto;
   }
 
-  .socials {
-    justify-content: center;
-  }
-
+  .socials,
   .skill-strip {
     justify-content: center;
   }
@@ -169,9 +160,9 @@
 
 <!-- NAV -->
 <nav>
-  <strong>Sanket Kumar</strong>
+  <strong>Sanket’s Portfolio</strong>
   <div>
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
     <a href="assets/resume.pdf" target="_blank">Resume</a>
@@ -183,14 +174,17 @@
 
   <div>
     <h1>
-      Mechanical<br>
-      Engineering Student
+      Mechanical Engineer<br>
+      <span style="color: var(--accent);">
+        CAD • CAE • Engineering Simulation
+      </span>
     </h1>
 
     <p>
-      I design, analyze, and validate mechanical systems using
-      CAD and CAE principles, with hands-on experience in
-      SolidWorks, ANSYS, MATLAB, and Python.
+      Mechanical Engineer with hands-on experience in CAD design,
+      surface modeling, and engineering simulations.
+      Skilled in SolidWorks, ANSYS, MATLAB, and Python,
+      with a strong focus on accurate, analysis-ready engineering models.
     </p>
 
     <!-- SKILLS -->
@@ -203,10 +197,10 @@
 
     <!-- SOCIAL LINKS -->
     <div class="socials">
-      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" title="LinkedIn">
+      <a href="https://www.linkedin.com/in/sanketkumar2/" target="_blank" title="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://github.com/YOUR_GITHUB" target="_blank" title="GitHub">
+      <a href="https://github.com/2cdsdc" target="_blank" title="GitHub">
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -218,49 +212,9 @@
 
 </section>
 
-<!-- FEATURED PROJECTS -->
-<section class="section">
-  <h2>Featured Projects</h2><br>
-
-  <div class="grid">
-
-    <a href="projects/engine.html">
-      <div class="project-card">
-        <img src="assets/images/engine.jpg">
-        <div class="content">
-          <h3>V6 Engine Assembly</h3>
-          <p>Parametric CAD modeling and motion study in SolidWorks.</p>
-        </div>
-      </div>
-    </a>
-
-    <a href="projects/truss.html">
-      <div class="project-card">
-        <img src="assets/images/truss.jpg">
-        <div class="content">
-          <h3>Truss Stress Analysis</h3>
-          <p>Structural FEA and factor of safety analysis in ANSYS.</p>
-        </div>
-      </div>
-    </a>
-
-    <a href="projects/ml.html">
-      <div class="project-card">
-        <img src="assets/images/ml.jpg">
-        <div class="content">
-          <h3>Failure Prediction Model</h3>
-          <p>Machine learning based predictive maintenance system.</p>
-        </div>
-      </div>
-    </a>
-
-  </div>
-</section>
-
 <footer>
-© 2025 Sanket Kumar
+© 2025 Sanket Kumar · Mechanical Engineering Portfolio
 </footer>
 
 </body>
 </html>
-
