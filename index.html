@@ -3,162 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Sanket’s Portfolio</title>
-
-<meta name="description" content="Mechanical Engineer specializing in CAD, CAE, and engineering simulation. Portfolio of Sanket Kumar.">
-
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-/* ===== HOME PAGE ENHANCEMENT ===== */
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 90px;
-  align-items: center;
-}
-
-/* Heading animation */
-.hero h1 {
-  font-size: 3.6rem;
-  line-height: 1.1;
-  margin-bottom: 22px;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideUp 1s ease forwards;
-}
-
-.hero p {
-  font-size: 1.05rem;
-  max-width: 580px;
-  opacity: 0;
-  transform: translateY(25px);
-  animation: slideUp 1s ease forwards;
-  animation-delay: 0.15s;
-}
-
-/* Accent line */
-.hero h1::after {
-  content: "";
-  display: block;
-  width: 130px;
-  height: 4px;
-  background: var(--accent);
-  margin-top: 20px;
-  border-radius: 6px;
-}
-
-/* Skill chips */
-.skill-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
-  opacity: 0;
-  animation: slideUp 1s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.skill {
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.skill strong {
-  color: var(--accent);
-}
-
-/* Social icons */
-.socials {
-  display: flex;
-  gap: 18px;
-  margin-top: 28px;
-  opacity: 0;
-  animation: slideUp 1s ease forwards;
-  animation-delay: 0.45s;
-}
-
-.socials a {
-  font-size: 1.3rem;
-  color: var(--text);
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  color: var(--accent);
-  transform: translateY(-4px);
-}
-
-/* Photo frame */
-.photo-frame {
-  background: linear-gradient(
-    135deg,
-    rgba(79,156,249,0.18),
-    rgba(18,26,47,0.95)
-  );
-  padding: 22px;
-  border-radius: 26px;
-  opacity: 0;
-  transform: translateX(50px);
-  animation:
-    slideIn 1s ease forwards,
-    floatImage 9s ease-in-out infinite;
-  animation-delay: 0.4s, 1.4s;
-}
-
-/* Image */
-.photo-frame img {
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 35px 70px rgba(0,0,0,0.45);
-}
-
-/* Animations */
-@keyframes slideUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideIn {
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes floatImage {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero h1::after {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .photo-frame {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .socials,
-  .skill-strip {
-    justify-content: center;
-  }
-}
-</style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <strong>Sanket’s Portfolio</strong>
   <div>
@@ -166,109 +17,41 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
     <a href="assets/resume.pdf" target="_blank">Resume</a>
-    <i class="fa-solid fa-moon theme-toggle" onclick="toggleTheme()"></i>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="section hero">
-
   <div>
-    <h1>
-      Mechanical Engineer<br>
-      <span style="color: var(--accent);">
-        CAD • CAE • Engineering Simulation
-      </span>
-    </h1>
+    <h1>Mechanical Engineer<br>CAD & CAE</h1>
 
     <p>
-      Mechanical Engineer with hands-on experience in CAD design,
-      surface modeling, and engineering simulations.
-      Skilled in SolidWorks, ANSYS, MATLAB, and Python,
-      with a strong focus on accurate, analysis-ready engineering models.
+      Mechanical engineer focused on CAD design, surface modeling,
+      and engineering simulations using SolidWorks and ANSYS.
     </p>
 
-    <!-- SKILLS -->
     <div class="skill-strip">
       <div class="skill"><strong>CAD</strong> SolidWorks</div>
       <div class="skill"><strong>CAE</strong> ANSYS</div>
       <div class="skill"><strong>Simulation</strong> MATLAB</div>
       <div class="skill"><strong>ML</strong> Python</div>
     </div>
-    <div class="stats reveal">
-  <div class="stat">
-    <h3>7+</h3>
-    <p>CAD Projects</p>
-  </div>
-  <div class="stat">
-    <h3>3+</h3>
-    <p>Simulation Studies</p>
-  </div>
-</div>
 
-
-    <!-- SOCIAL LINKS -->
     <div class="socials">
-      <a href="https://www.linkedin.com/in/sanketkumar2/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/2cdsdc" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
+      <a href="https://www.linkedin.com/in/sanketkumar2/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/2cdsdc" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </div>
 
   <div class="photo-frame">
     <img src="assets/images/profile.jpg" alt="Sanket Kumar">
   </div>
-
 </section>
 
-<footer>
-© 2025 Sanket Kumar · Mechanical Engineering Portfolio
-</footer>
-<script>
-/* ===== DARK / LIGHT MODE ===== */
-function toggleTheme() {
-  document.body.classList.toggle("light");
-}
-
-/* ===== SCROLL REVEAL ===== */
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("show");
-    }
-  });
-});
-
-/* Run once on load */
-window.dispatchEvent(new Event("scroll"));
-</script>
-<!-- PROJECT MODAL -->
-<div class="project-modal" id="projectModal">
-  <div class="modal-box">
-    <span class="modal-close" onclick="closeModal()">✕</span>
-    <h2 id="modalTitle"></h2>
-    <p id="modalDesc"></p>
-  </div>
-</div>
-<script>
-function openModal(title, desc) {
-  document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalDesc").innerText = desc;
-  document.getElementById("projectModal").classList.add("show");
-}
-
-function closeModal() {
-  document.getElementById("projectModal").classList.remove("show");
-}
-</script>
+<footer>© 2025 Sanket Kumar</footer>
 
 </body>
 </html>
+
+
 
 
