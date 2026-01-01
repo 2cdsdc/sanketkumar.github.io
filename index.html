@@ -166,6 +166,7 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
     <a href="assets/resume.pdf" target="_blank">Resume</a>
+    <i class="fa-solid fa-moon theme-toggle" onclick="toggleTheme()"></i>
   </div>
 </nav>
 
@@ -194,6 +195,17 @@
       <div class="skill"><strong>Simulation</strong> MATLAB</div>
       <div class="skill"><strong>ML</strong> Python</div>
     </div>
+    <div class="stats reveal">
+  <div class="stat">
+    <h3>7+</h3>
+    <p>CAD Projects</p>
+  </div>
+  <div class="stat">
+    <h3>3+</h3>
+    <p>Simulation Studies</p>
+  </div>
+</div>
+
 
     <!-- SOCIAL LINKS -->
     <div class="socials">
@@ -215,6 +227,28 @@
 <footer>
 © 2025 Sanket Kumar · Mechanical Engineering Portfolio
 </footer>
+<script>
+/* ===== DARK / LIGHT MODE ===== */
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+
+/* ===== SCROLL REVEAL ===== */
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
+
+/* Run once on load */
+window.dispatchEvent(new Event("scroll"));
+</script>
 
 </body>
 </html>
+
