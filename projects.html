@@ -188,19 +188,17 @@
 </footer>
 
 <script>
-function filterProjects(type) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  event.target.closest('.filter-btn').classList.add('active');
+function openModal(title, desc) {
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalDesc").innerText = desc;
+  document.getElementById("projectModal").classList.add("show");
+}
 
-  document.querySelectorAll('.project-card').forEach(card => {
-    if (type === 'all' || card.classList.contains(type)) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
-  });
+function closeModal() {
+  document.getElementById("projectModal").classList.remove("show");
 }
 </script>
+
 <!-- PROJECT MODAL -->
 <div class="project-modal" id="projectModal">
   <div class="modal-box">
