@@ -3,63 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Projects | Sanket Kumar</title>
-<meta name="description" content="CAD and Simulation projects by Mechanical Engineering student Sanket Kumar.">
-
+<title>Projects | Sanket</title>
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-/* ---------- FILTER TABS ---------- */
-.filter-tabs {
-  display: flex;
-  gap: 15px;
-  margin: 40px 0;
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  padding: 10px 22px;
-  border-radius: 30px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: var(--text-dim);
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 0.85rem;
-}
-
-.filter-btn i {
-  margin-right: 8px;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(79,156,249,0.1);
-}
-
-/* ---------- TAG COLORS ---------- */
-.tag-cad {
-  background: rgba(79,156,249,0.15);
-  color: var(--accent);
-}
-
-.tag-cae {
-  background: rgba(34,197,94,0.15);
-  color: #22c55e;
-}
-</style>
-
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-  <strong>Sanket Kumar</strong>
+  <strong>Sanket’s Portfolio</strong>
   <div>
     <a href="index.html">Home</a>
     <a href="projects.html" class="active">Projects</a>
@@ -69,144 +20,42 @@
 </nav>
 
 <section class="section">
-
   <h1>Projects</h1>
-  <p>
-    Selected CAD design and engineering simulation projects demonstrating
-    mechanical design, surfacing, and CAE analysis skills.
-  </p>
-
-  <!-- FILTER TABS -->
-  <div class="filter-tabs">
-    <button class="filter-btn active" onclick="filterProjects('all')">
-      <i class="fa-solid fa-layer-group"></i> All
-    </button>
-    <button class="filter-btn" onclick="filterProjects('cad')">
-      <i class="fa-solid fa-cube"></i> CAD
-    </button>
-    <button class="filter-btn" onclick="filterProjects('cae')">
-      <i class="fa-solid fa-chart-line"></i> Simulation
-    </button>
-  </div>
+  <p>Selected CAD and simulation projects.</p>
 
   <div class="grid">
 
-    <!-- ================= CAD PROJECTS ================= -->
-<section class="section">
-  <h1>CAD Projects</h1>
-  <p>
-    Demonstrating expertise in surface modeling, solid modeling,
-    and sheet metal design using SolidWorks.
-  </p>
+    <div class="project-card">
+      <img src="assets/images/abb1.png">
+      <div class="content">
+        <h3>ABB Robot Arm</h3>
+        <p>Mechanical assembly CAD model.</p>
+        <a href="project/abb-robot-arm.html">View Project →</a>
+      </div>
+    </div>
 
-    <!-- Fighter Jet -->
-    <div class="project-card cad">
+    <div class="project-card">
       <img src="assets/images/jet1.png">
       <div class="content">
         <h3>Fighter Jet – Surface Model</h3>
-        <p>Advanced surface modeling with aerodynamic continuity.</p>
+        <p>Advanced surface modeling.</p>
         <a href="project/fighter-jet.html">View Project →</a>
       </div>
     </div>
 
-    <!-- Sports Car -->
-    <div class="project-card cad">
+    <div class="project-card">
       <img src="assets/images/car1.png">
       <div class="content">
         <h3>Sports Car – Surface Model</h3>
-        <p>Automotive exterior surfacing focused on styling.</p>
+        <p>Automotive exterior design.</p>
         <a href="project/sports-car.html">View Project →</a>
       </div>
     </div>
 
   </div>
-
-    <!-- ABB Robot -->
-    <div class="project-card cad">
-      <img src="assets/images/abb1.png">
-      <div class="content">
-        <h3>ABB Robot Arm</h3>
-        <p>Mechanical assembly with joints and mechanisms.</p>
-        <a href="project/abb-robot-arm.html">View Project →</a>
-      </div>
-    </div>
-
-    <!-- Tyre -->
-    <div class="project-card cad">
-      <img src="assets/images/tyre1.png">
-      <div class="content">
-        <h3>Automotive Tyre</h3>
-        <p>Parametric tyre design with tread pattern.</p>
-        <a href="project/tyre-cad.html">View Project →</a>
-      </div>
-    </div>
-
-  </div>
-
-    <!-- Medical Chair -->
-    <div class="project-card cad">
-      <img src="assets/images/medical-chair-1.png">
-      <div class="content">
-        <h3>Medical Chair with Heaters</h3>
-        <p>Product modification with ergonomic focus.</p>
-        <a href="project/medical-chair.html">View Project →</a>
-      </div>
-    </div>
-
-  </div>
-
 </section>
 
-
-
-    <!-- ================= CAE PROJECT ================= -->
-
-    <div class="project-card cae">
-      <div class="content">
-        <h3><i class="fa-solid fa-temperature-high"></i>
-          Laser Cutting – Coupled Thermal & Structural
-        </h3>
-        <p>
-          Transient CAE analysis evaluating temperature and stress response
-          during laser cutting using ANSYS.
-        </p>
-        <div class="project-tags">
-          <span class="tag-cae">ANSYS 2024 R1</span>
-          <span class="tag-cae">Transient Thermal</span>
-          <span class="tag-cae">Structural</span>
-          <span class="tag-cae">APDL</span>
-        </div>
-        <a href="project/laser-cut-thermal-structural.html">View Project →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  © 2025 Sanket Kumar
-</footer>
-
-<script>
-function openModal(title, desc) {
-  document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalDesc").innerText = desc;
-  document.getElementById("projectModal").classList.add("show");
-}
-
-function closeModal() {
-  document.getElementById("projectModal").classList.remove("show");
-}
-</script>
-
-<!-- PROJECT MODAL -->
-<div class="project-modal" id="projectModal">
-  <div class="modal-box">
-    <span class="modal-close" onclick="closeModal()">✕</span>
-    <h2 id="modalTitle"></h2>
-    <p id="modalDesc"></p>
-  </div>
-</div>
+<footer>© 2025 Sanket Kumar</footer>
 
 </body>
 </html>
