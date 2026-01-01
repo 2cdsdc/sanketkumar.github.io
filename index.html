@@ -3,32 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sanket’s Portfolio</title>
+
+<title>Sanket Kumar | Mechanical Engineering Portfolio</title>
+
+<meta name="description" content="Mechanical Engineering student portfolio showcasing CAD, CAE, simulation, and machine learning projects.">
+
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== HOME PAGE ENHANCEMENT ===== */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+/* Heading animation */
+.hero h1 {
+  font-size: 3.6rem;
+  line-height: 1.1;
+  margin-bottom: 22px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 1s ease forwards;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  max-width: 580px;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0.15s;
+}
+
+/* Accent line */
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 4px;
+  background: var(--accent);
+  margin-top: 20px;
+  border-radius: 6px;
+}
+
+/* Skill chips */
+.skill-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.skill {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.skill strong {
+  color: var(--accent);
+}
+
+/* Social icons */
+.socials {
+  display: flex;
+  gap: 18px;
+  margin-top: 28px;
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0.45s;
+}
+
+.socials a {
+  font-size: 1.3rem;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* Photo frame */
+.photo-frame {
+  background: linear-gradient(
+    135deg,
+    rgba(79,156,249,0.18),
+    rgba(18,26,47,0.95)
+  );
+  padding: 22px;
+  border-radius: 26px;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideIn 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* Image */
+.photo-frame img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 35px 70px rgba(0,0,0,0.45);
+}
+
+/* Float */
+.photo-frame {
+  animation:
+    slideIn 1s ease forwards,
+    floatImage 9s ease-in-out infinite;
+  animation-delay: 0.4s, 1.4s;
+}
+
+/* Animations */
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes floatImage {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero h1::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .photo-frame {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .skill-strip {
+    justify-content: center;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <strong>Sanket’s Portfolio</strong>
+  <strong>Sanket Kumar</strong>
   <div>
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
     <a href="assets/resume.pdf" target="_blank">Resume</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="section hero">
+
   <div>
-    <h1>Mechanical Engineer<br>CAD & CAE</h1>
+    <h1>
+      Mechanical<br>
+      Engineering Student
+    </h1>
 
     <p>
-      Mechanical engineer focused on CAD design, surface modeling,
-      and engineering simulations using SolidWorks and ANSYS.
+      I design, analyze, and validate mechanical systems using
+      CAD and CAE principles, with hands-on experience in
+      SolidWorks, ANSYS, MATLAB, and Python.
     </p>
 
+    <!-- SKILLS -->
     <div class="skill-strip">
       <div class="skill"><strong>CAD</strong> SolidWorks</div>
       <div class="skill"><strong>CAE</strong> ANSYS</div>
@@ -36,22 +201,66 @@
       <div class="skill"><strong>ML</strong> Python</div>
     </div>
 
+    <!-- SOCIAL LINKS -->
     <div class="socials">
-      <a href="https://www.linkedin.com/in/sanketkumar2/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/2cdsdc" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/YOUR_GITHUB" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
     </div>
   </div>
 
   <div class="photo-frame">
     <img src="assets/images/profile.jpg" alt="Sanket Kumar">
   </div>
+
 </section>
 
-<footer>© 2025 Sanket Kumar</footer>
+<!-- FEATURED PROJECTS -->
+<section class="section">
+  <h2>Featured Projects</h2><br>
+
+  <div class="grid">
+
+    <a href="projects/engine.html">
+      <div class="project-card">
+        <img src="assets/images/engine.jpg">
+        <div class="content">
+          <h3>V6 Engine Assembly</h3>
+          <p>Parametric CAD modeling and motion study in SolidWorks.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="projects/truss.html">
+      <div class="project-card">
+        <img src="assets/images/truss.jpg">
+        <div class="content">
+          <h3>Truss Stress Analysis</h3>
+          <p>Structural FEA and factor of safety analysis in ANSYS.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="projects/ml.html">
+      <div class="project-card">
+        <img src="assets/images/ml.jpg">
+        <div class="content">
+          <h3>Failure Prediction Model</h3>
+          <p>Machine learning based predictive maintenance system.</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+© 2025 Sanket Kumar
+</footer>
 
 </body>
 </html>
-
-
-
 
